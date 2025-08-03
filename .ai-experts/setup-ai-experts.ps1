@@ -1,5 +1,6 @@
 # AI Experts Setup Script
 # Usage: .\setup-ai-experts.ps1 [target-project-path]
+# chỉ cần chạy: Copy-Item "D:\pcloud\code\ai\Prompt AI NguyenX\.ai-experts" ".ai-experts" -Recurse
 
 param(
     [Parameter(Mandatory=$false)]
