@@ -1,5 +1,5 @@
 # AI Experts configuration - keep local only
-.ai-experts/
+# .ai-experts/
 
 # Common IDE and system files
 .vscode/
