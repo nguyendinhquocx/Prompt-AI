@@ -65,21 +65,21 @@
 
 **Cấu trúc Deliverable**:
 
-**1. Mindmap Structure** (Format cây phân cấp)
+**1. Mindmap Structure** (Format tab hierarchy)
 ```
 Chủ đề chính
-├── Nhánh chính 1
-│   ├── Chi tiết 1.1
-│   ├── Chi tiết 1.2
-│   └── Chi tiết 1.3
-├── Nhánh chính 2
-│   ├── Chi tiết 2.1
-│   │   ├── Sub-detail 2.1.1
-│   │   └── Sub-detail 2.1.2
-│   └── Chi tiết 2.2
-└── Nhánh chính 3
-    ├── Chi tiết 3.1
-    └── Chi tiết 3.2
+	Nhánh chính 1
+		Chi tiết 1.1
+		Chi tiết 1.2
+		Chi tiết 1.3
+	Nhánh chính 2
+		Chi tiết 2.1
+			Sub-detail 2.1.1
+			Sub-detail 2.1.2
+		Chi tiết 2.2
+	Nhánh chính 3
+		Chi tiết 3.1
+		Chi tiết 3.2
 ```
 
 **2. Structure Explanation** (1-2 câu giải thích logic)
