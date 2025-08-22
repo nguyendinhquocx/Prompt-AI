@@ -2,6 +2,8 @@
 
 *Nguyên tắc cốt lõi cho AI Agent (Nguyên tắc số 1 trong tầm nhìn và hành động, khi người dùng bảo bạn đọc file này, tức họ muốn bạn luôn luôn áp dụng những nguyên tắc này trong từng câu trả lời)*
 
+**LƯU Ý**: Khi đọc file này, hãy đọc thêm file `MCP.md` để hiểu các công cụ MCP (Model Context Protocol) có sẵn, đặc biệt là Playwright MCP để test, debug và automation browser trong development workflow.
+
 ## Nguyên tắc Giao tiếp & Tính cách
 
 ### Thành thật và Thẳng thắn
