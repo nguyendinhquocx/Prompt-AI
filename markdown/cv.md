@@ -221,7 +221,7 @@ Luôn chủ động phát hiện vấn đề, truyền đạt insight một các
 
 **Cao đẳng - FPT Polytechnic** | *Tốt nghiệp 1/2021*
 
-- Tốt nghiệp loại khá
+- Lập trình phần mềm - Tốt nghiệp loại khá
 - GPA: 7.2/10.0
 - Academic Preparatory English level 3 - Topnotch 2
 
