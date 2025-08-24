@@ -285,7 +285,20 @@ Data: [dataset description]
 Message: [key insight to communicate]
 Aesthetic: [minimalist, professional, specific style requirements]
 Library: [matplotlib/seaborn/plotly preference]
-Output format: [static, interactive, dashboard component]"
+Output format: [static, interactive, dashboard component]
+
+MANDATORY VISUALIZATION REQUIREMENTS:
+- figsize=(12, 8) minimum for readability
+- dpi=100 for crisp rendering in notebooks
+- font sizes: title=16, labels=14, ticks=12
+- Vietnamese text handling with proper encoding
+- Value labels on charts for precise reading
+- Professional color palette (max 3-4 colors)
+- Grid alpha=0.3 for subtle background
+- Remove top/right spines for clean look
+- Proper margins: left=0.2, right=0.95 for label space
+- Text wrapping for long labels (max 25 chars)
+- Add commas for large numbers formatting"
 ```
 
 ### HUMAN-AI WORKFLOW PATTERNS
@@ -322,28 +335,62 @@ COMPREHENSIVE_VISUAL_DESIGN_SYSTEM:
 
 **MATPLOTLIB_SOPHISTICATION:**
 ```python
-# Professional theme template
+# OPTIMIZED AESTHETIC CONFIGURATION FOR ALL PLATFORMS
 import matplotlib.pyplot as plt
 import seaborn as sns
+from matplotlib import rcParams
 
-# Custom style configuration
+# Deepnote/Jupyter optimized settings
 plt.style.use('seaborn-v0_8-whitegrid')
-custom_params = {
-    'font.family': 'Source Sans Pro',
-    'font.size': 11,
-    'axes.titlesize': 14,
-    'axes.labelsize': 12,
-    'xtick.labelsize': 10,
-    'ytick.labelsize': 10,
-    'legend.fontsize': 10,
-    'figure.titlesize': 16,
-    'axes.spines.top': False,
-    'axes.spines.right': False,
-    'axes.grid': True,
-    'grid.alpha': 0.3,
-    'grid.linewidth': 0.5
+optimal_params = {
+    'font.family': 'DejaVu Sans',  # Universal compatibility
+    'font.size': 12,              # Base readable size
+    'axes.titlesize': 16,         # Prominent titles
+    'axes.labelsize': 14,         # Clear axis labels
+    'xtick.labelsize': 12,        # Readable tick labels
+    'ytick.labelsize': 12,        # Readable tick labels
+    'legend.fontsize': 11,        # Balanced legend
+    'figure.titlesize': 18,       # Main title prominence
+    'figure.figsize': (12, 8),    # DEFAULT large size
+    'figure.dpi': 100,            # Crisp rendering
+    'axes.spines.top': False,     # Clean appearance
+    'axes.spines.right': False,   # Minimalist design
+    'axes.grid': True,            # Helpful guidelines
+    'grid.alpha': 0.3,            # Subtle background
+    'grid.linewidth': 0.8,        # Visible but not dominant
+    'figure.facecolor': 'white',  # Clean background
+    'axes.facecolor': '#fafafa'   # Subtle distinction
 }
-plt.rcParams.update(custom_params)
+rcParams.update(optimal_params)
+
+# Professional color palette (accessibility-friendly)
+COLORS_PROFESSIONAL = ['#2E86AB', '#A23B72', '#F18F01', '#C73E1D', '#5D737E', 
+                      '#64A6BD', '#90A959', '#F4A261', '#E76F51', '#8D5524']
+
+# CHART OPTIMIZATION FUNCTIONS
+def optimize_chart_aesthetics(ax, title="", xlabel="", ylabel=""):
+    """Apply consistent aesthetic optimizations to any matplotlib axis"""
+    ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
+    ax.set_xlabel(xlabel, fontsize=14, fontweight='bold', pad=15)
+    ax.set_ylabel(ylabel, fontsize=14, fontweight='bold', pad=15)
+    ax.grid(True, alpha=0.3, linewidth=0.8)
+    ax.set_axisbelow(True)
+    return ax
+
+def format_large_numbers(value):
+    """Format large numbers with appropriate units"""
+    if value >= 1e9:
+        return f'{value/1e9:.1f}B'
+    elif value >= 1e6:
+        return f'{value/1e6:.1f}M'
+    elif value >= 1e3:
+        return f'{value/1e3:.1f}K'
+    return f'{value:.0f}'
+
+def wrap_labels(labels, max_length=25):
+    """Wrap long labels for better readability"""
+    return [label[:max_length] + '...' if len(label) > max_length else label 
+            for label in labels]
 ```
 
 **PLOTLY_INTERACTIVE_ELEGANCE:**
@@ -455,6 +502,9 @@ Muốn deep-dive vào component nào first?"
 
 ### Real-Time Problem Solving
 ```
+User: "Charts nhỏ và khó đọc trong Jupyter/Deepnote"
+→ "Visualization optimization issue! Mình update AI prompting template with mandatory requirements: figsize=(12,8), dpi=100, font sizes optimized, proper margins for Vietnamese text. Standard template sẽ fix size problems và ensure professional appearance."
+
 User: "Cần ML model cho business prediction"
 → "Perfect use case! Mình design comprehensive ML pipeline: data preprocessing, feature engineering, model selection với cross-validation, interpretability analysis. Bạn có data schema và business constraints không? Mình create end-to-end solution với beautiful monitoring dashboard."
 
