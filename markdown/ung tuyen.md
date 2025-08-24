@@ -4,228 +4,252 @@
 
 ---
 
-## 1. SHOPEE 🛒
+## 1. SHOPEE
 **Vị trí:** Senior Business Intelligence Associate (Marketplace Cost)  
 **Phòng ban:** Business Intelligence & Planning  
 **Địa điểm:** TP. Hồ Chí Minh  
 
 ### YÊU CẦU CHÍNH:
-- **Kinh nghiệm:** 3+ năm BI/Data Analytics với business impact
-- **Technical:** SQL (mạnh), Python/R, Excel/Google Sheets advanced, Power Query/Pivot
-- **Soft skills:** Analytical thinking, English/Vietnamese, cross-functional collaboration
+- **Kinh nghiệm:** 3+ năm BI/Data Analytics với tác động kinh doanh thực tế
+- **Kỹ thuật:** SQL (mạnh), Python/R, Excel/Google Sheets nâng cao, Power Query/Pivot
+- **Kỹ năng mềm:** Tư duy phân tích, tiếng Anh/tiếng Việt, làm việc liên phòng ban
 
 ### TRÁCH NHIỆM CHÍNH:
-- Xây dựng business metrics và decision tools (dashboard, reports)
-- Phân tích với Operations teams để tối ưu operational performance & cost
-- Communicate business state cho stakeholders, đưa insights cho strategic decisions
-- Support tracking, validation và projections cho business functions
+- Xây dựng business metrics và công cụ hỗ trợ quyết định (dashboard, báo cáo)
+- Phân tích với đội Operations để tối ưu hiệu suất hoạt động và chi phí
+- Truyền đạt tình trạng kinh doanh cho các stakeholder, đưa ra insights cho quyết định chiến lược
+- Hỗ trợ theo dõi, validation và dự báo cho các chức năng kinh doanh
 
 ### CÁCH TRẢ LỜI PHỎNG VẤN:
 **"Tại sao chọn Shopee?"**
-- "Shopee là platform e-commerce hàng đầu SEA, tôi muốn contribute vào marketplace cost optimization"
-- "Kinh nghiệm FMCG + Healthcare giúp tôi hiểu business metrics đa ngành"
+- "Shopee là nền tảng thương mại điện tử hàng đầu Đông Nam Á, tôi muốn đóng góp vào việc tối ưu chi phí marketplace"
+- "Kinh nghiệm ngành FMCG và y tế giúp tôi hiểu business metrics đa ngành"
 
-**"Kinh nghiệm relevant?"**
-- "Dashboard real-time cho BLĐ tại Hoàn Mỹ → match với decision tools requirement"
-- "Data Warehouse SQL Server tại Hữu Nghị → strong SQL experience"
-- "Cross-functional với sales, operations, management → collaboration skills"
+**"Kinh nghiệm có phù hợp?"**
+- "Dashboard thời gian thực cho Ban lãnh đạo tại Hoàn Mỹ phù hợp với yêu cầu decision tools"
+- "Data Warehouse SQL Server tại Hữu Nghị thể hiện kinh nghiệm SQL mạnh"
+- "Làm việc liên phòng ban với sales, operations, quản lý thể hiện kỹ năng collaboration"
 
 ---
 
-## 2. VNG (ZALOPAY) 💰
+## 2. VNG (ZALOPAY)
 **Vị trí:** Business Intelligence Analyst (Digital Services)  
 **Mã:** 25-DGS-2832  
 **Địa điểm:** TP. Hồ Chí Minh  
 
 ### YÊU CẦU CHÍNH:
-- **Kinh nghiệm:** 2+ năm BI/Data Analytics (tech firms preferred: fintech, e-commerce)
-- **Technical:** SQL, Tableau/Power BI, R/Python, PySpark (plus), Excel/PowerPoint advanced
-- **Education:** Business Analytics, Computer Science, Statistics, Math, Economics
+- **Kinh nghiệm:** 2+ năm BI/Data Analytics (ưu tiên công ty công nghệ: fintech, thương mại điện tử)
+- **Kỹ thuật:** SQL, Tableau/Power BI, R/Python, PySpark (lợi thế), Excel/PowerPoint nâng cao
+- **Học vấn:** Business Analytics, Khoa học máy tính, Thống kê, Toán, Kinh tế
 
 ### TRÁCH NHIỆM CHÍNH:
-- Analyze large datasets → patterns, trends, growth opportunities
-- Develop dynamic metrics, benchmarks, analytical frameworks
-- Dashboards, reports, visualizations cho performance metrics
-- Cross-functional collaboration cho data-driven solutions
+- Phân tích bộ dữ liệu lớn để tìm patterns, xu hướng, cơ hội tăng trưởng
+- Phát triển metrics động, benchmarks, framework phân tích
+- Tạo dashboard, báo cáo, visualization cho performance metrics
+- Hợp tác liên phòng ban cho các giải pháp data-driven
 
 ### CÁCH TRẢ LỜI PHỎNG VẤN:
-**"Tại sao fintech?"**
-- "Fintech là future của financial services, ZaloPay leading digital payment VN"
-- "Data-driven decision making crucial trong fintech environment"
+**"Tại sao chọn fintech?"**
+- "Fintech là tương lai của dịch vụ tài chính, ZaloPay dẫn đầu thanh toán số tại Việt Nam"
+- "Ra quyết định dựa trên dữ liệu là then chốt trong môi trường fintech"
 
-**"Experience match?"**
-- "4+ năm data analytics (vượt yêu cầu 2+)"
-- "Power BI dashboards, Python analysis, SQL Data Warehouse"
-- "Cross-industry insights từ FMCG, healthcare sẽ mang fresh perspective"
+**"Kinh nghiệm có match?"**
+- "4+ năm phân tích dữ liệu (vượt yêu cầu 2+)"
+- "Power BI dashboard, phân tích Python, SQL Data Warehouse"
+- "Kinh nghiệm đa ngành từ FMCG, y tế sẽ mang góc nhìn mới"
 
 ---
 
-## 3. AHAMOVE 🚚
+## 3. AHAMOVE
 **Vị trí:** Automation & Optimization Analyst Specialist  
 **Địa điểm:** Quận 10, TP. Hồ Chí Minh  
 
 ### YÊU CẦU CHÍNH:
-- **Kinh nghiệm:** 2-3 năm system coordination, business analysis, internal tool development
-- **Technical:** Google Sheets, SQL, Python/AppScript, RPA tools (Zapier, Make), No Code/Low Code
-- **Skills:** BRD writing, UAT, documentation, incentive systems knowledge
+- **Kinh nghiệm:** 2-3 năm điều phối hệ thống, phân tích kinh doanh, phát triển công cụ nội bộ
+- **Kỹ thuật:** Google Sheets, SQL, Python/AppScript, công cụ RPA (Zapier, Make), No Code/Low Code
+- **Kỹ năng:** Viết BRD, UAT, documentation, hiểu biết hệ thống khuyến khích
 
 ### TRÁCH NHIỆM CHÍNH:
-- **Tech Coordination (30%):** Liaison Operations-Tech/BI teams, BRD, UAT, data validation
-- **Automation & Optimization (40%):** Automation initiatives, workflow optimization, monitoring
-- **Documentation (30%):** System docs, wikis, SOPs, training support
+- **Điều phối công nghệ (30%):** Làm cầu nối giữa Operations-Tech/BI teams, BRD, UAT, validation dữ liệu
+- **Automation & Tối ưu (40%):** Sáng kiến tự động hóa, tối ưu workflow, giám sát
+- **Tài liệu (30%):** Tài liệu hệ thống, wiki, SOPs, hỗ trợ đào tạo
 
 ### CÁCH TRẢ LỜI PHỎNG VẤN:
-**"Tại sao logistics?"**
-- "Logistics là backbone của e-commerce, Ahamove pioneering last-mile delivery"
-- "Automation crucial để scale operations efficiently"
+**"Tại sao chọn logistics?"**
+- "Logistics là xương sống của thương mại điện tử, Ahamove tiên phong giao hàng last-mile"
+- "Tự động hóa rất quan trọng để mở rộng quy mô hoạt động hiệu quả"
 
-**"Relevant experience?"**
-- "AppScript, Python automation trong healthcare environment"
-- "BRD experience làm cầu nối business-tech teams"
-- "Documentation và training nhân viên sử dụng systems"
+**"Kinh nghiệm có phù hợp?"**
+- "AppScript, Python automation trong môi trường y tế"
+- "Kinh nghiệm BRD làm cầu nối giữa business-tech teams"
+- "Documentation và đào tạo nhân viên sử dụng hệ thống"
 
 ---
 
-## 4. NINJA VAN 📦
+## 4. NINJA VAN
 **Vị trí:** Analyst, Business Intelligence  
 **Địa điểm:** TP. Hồ Chí Minh  
 
 ### YÊU CẦU CHÍNH:
-- **Technical:** Excel, SQL, Data Viz (Tableau, Power BI, Looker), Python (plus), Cloud tools (plus)
-- **Đặc biệt:** ChatGPT proficiency (unique requirement)
-- **Education:** Bachelor degree
+- **Kỹ thuật:** Excel, SQL, Data Visualization (Tableau, Power BI, Looker), Python (lợi thế), Cloud tools (lợi thế)
+- **Đặc biệt:** Thành thạo ChatGPT (yêu cầu độc đáo)
+- **Học vấn:** Bằng cử nhân
 
 ### TRÁCH NHIỆM CHÍNH:
-- Insights modeling & actionable data production
-- Operational efficiency & cost metrics measurement, SLA tracking
-- Workflow improvement
-- System & process optimization suggestions
+- Mô hình hóa insights và sản xuất dữ liệu có thể hành động
+- Đo lường hiệu quả hoạt động và metrics chi phí, theo dõi SLA
+- Cải thiện workflow
+- Đề xuất tối ưu hệ thống và quy trình
 
 ### CÁCH TRẢ LỜI PHỎNG VẤN:
-**"ChatGPT experience?"**
-- "Daily sử dụng ChatGPT, Copilot, Claude cho work optimization"
-- "Prompt Engineering, Context Engineering để improve productivity"
+**"Kinh nghiệm với ChatGPT?"**
+- "Sử dụng hàng ngày ChatGPT, Copilot, Claude để tối ưu công việc"
+- "Prompt Engineering, Context Engineering để nâng cao năng suất"
 
-**"Logistics industry knowledge?"**
-- "QGIS experience trong FMCG cho route optimization"
-- "Operations efficiency focus tương đồng với logistics requirements"
+**"Hiểu biết về ngành logistics?"**
+- "Kinh nghiệm QGIS trong FMCG để tối ưu tuyến đường"
+- "Focus vào hiệu quả hoạt động tương đồng với yêu cầu logistics"
 
 ---
 
-## 5. P&G 🧴
+## 5. P&G
 **Vị trí:** Analytics Manager  
 **Địa điểm:** TP. Hồ Chí Minh  
 
 ### YÊU CẦU CHÍNH:
-- **Kinh nghiệm:** 2-5 năm Analytics/BI (FMCG preferred)
-- **Skills:** Business metrics, brand/trade performance, analytic tools proficiency
-- **Languages:** English + Vietnamese proficiency
-- **Mindset:** Growth mindset, collaboration, adaptability
+- **Kinh nghiệm:** 2-5 năm Analytics/BI (ưu tiên FMCG)
+- **Kỹ năng:** Business metrics, hiệu suất thương hiệu/thương mại, thành thạo công cụ phân tích
+- **Ngôn ngữ:** Thành thạo tiếng Anh và tiếng Việt
+- **Tư duy:** Growth mindset, hợp tác, khả năng thích ứng
 
 ### TRÁCH NHIỆM CHÍNH:
-- Partner với categories & multi-functional teams
-- C-level decision making support through analytical insights
-- Business performance deep dives (trade, media opportunities)
-- Automation of analyses, data visualization solutions
-- 70-80% delivery + 20-30% innovation/data science projects
+- Hợp tác với các categories và nhóm đa chức năng
+- Hỗ trợ ra quyết định cấp C thông qua insights phân tích
+- Đào sâu hiệu suất kinh doanh (thương mại, cơ hội media)
+- Tự động hóa phân tích, giải pháp visualization dữ liệu
+- 70-80% delivery + 20-30% dự án đổi mới/data science
 
 ### CÁCH TRẢ LỜI PHỎNG VẤN:
-**"FMCG experience?"**
-- "1 năm Hữu Nghị Food: sales analytics, trade performance analysis"
-- "1 năm Mondelēz Kinh Đô: sales management, brand performance tracking"
+**"Kinh nghiệm FMCG?"**
+- "1 năm tại Hữu Nghị Food: phân tích sales, phân tích hiệu suất thương mại"
+- "1 năm tại Mondelēz Kinh Đô: quản lý sales, theo dõi hiệu suất thương hiệu"
 
-**"C-level support?"**
-- "Dashboard cho BLĐ tại Hoàn Mỹ, báo cáo strategic decisions"
-- "Tờ trình analysis cho Marketing campaigns approval"
+**"Hỗ trợ cấp C?"**
+- "Dashboard cho Ban lãnh đạo tại Hoàn Mỹ, báo cáo quyết định chiến lược"
+- "Phân tích tờ trình để phê duyệt chiến dịch Marketing"
 
 ---
 
-## 6. VINMEC 🏥
+## 6. VINMEC
 **Vị trí:** Chuyên viên Kế hoạch & Phân tích (Planning & Analysis Executive)  
 **Địa điểm:** TP. Hồ Chí Minh  
 
 ### YÊU CẦU CHÍNH:
-- **Kinh nghiệm:** 2+ năm data analysis, business analysis (healthcare preferred)
-- **Technical:** Excel, BI tools (Power BI, Tableau), SQL/Python/R (preferred)
-- **Education:** Economics, Healthcare, Hospital Management, Finance, Business, Statistics
+- **Kinh nghiệm:** 2+ năm phân tích dữ liệu, phân tích kinh doanh (ưu tiên y tế)
+- **Kỹ thuật:** Excel, công cụ BI (Power BI, Tableau), SQL/Python/R (ưu tiên)
+- **Học vấn:** Kinh tế, Y tế, Quản lý bệnh viện, Tài chính, Kinh doanh, Thống kê
 
 ### TRÁCH NHIỆM CHÍNH:
-- **Data Collection:** Hospital operations data (inpatient/outpatient, capacity, revenue)
-- **Analysis:** KPI monitoring, resource efficiency evaluation
-- **Reporting:** Daily/weekly/monthly reports for management, ad-hoc analysis
-- **Process Improvement:** Workflow optimization, technology implementation
+- **Thu thập dữ liệu:** Dữ liệu hoạt động bệnh viện (nội trú/ngoại trú, công suất, doanh thu)
+- **Phân tích:** Giám sát KPI, đánh giá hiệu quả tài nguyên
+- **Báo cáo:** Báo cáo hàng ngày/tuần/tháng cho ban quản lý, phân tích ad-hoc
+- **Cải thiện quy trình:** Tối ưu workflow, triển khai công nghệ
 
 ### CÁCH TRẢ LỜI PHỎNG VẤN:
-**"Healthcare advantage?"**
-- "1+ năm direct healthcare experience tại Hoàn Mỹ"
-- "Understand hospital data: capacity, patient flow, revenue analysis"
-- "KPI dashboard experience trong healthcare environment"
+**"Lợi thế trong y tế?"**
+- "1+ năm kinh nghiệm trực tiếp y tế tại Hoàn Mỹ"
+- "Hiểu dữ liệu bệnh viện: công suất, luồng bệnh nhân, phân tích doanh thu"
+- "Kinh nghiệm KPI dashboard trong môi trường y tế"
 
 ---
 
-## 7. MASAN CONSUMER 🍜
+## 7. MASAN CONSUMER
 **Vị trí:** Data Analysis Supervisor  
 **Req ID:** 1203  
 **Địa điểm:** TP. Hồ Chí Minh  
 
 ### YÊU CẦU CHÍNH:
-- **Kinh nghiệm:** 3-5 năm data analysis, legal support, compliance (FMCG preferred)
-- **Technical:** Excel, SQL, Power BI, database design, project management
-- **Focus:** Legal compliance, operational efficiency, regulatory compliance
+- **Kinh nghiệm:** 3-5 năm phân tích dữ liệu, hỗ trợ pháp lý, tuân thủ (ưu tiên FMCG)
+- **Kỹ thuật:** Excel, SQL, Power BI, thiết kế database, quản lý dự án
+- **Trọng tâm:** Tuân thủ pháp lý, hiệu quả hoạt động, tuân thủ quy định
 
 ### TRÁCH NHIỆM CHÍNH:
-- Data analysis for legal & compliance issues
-- Data system management & optimization
-- Compliance activities support
-- Dashboard development & reporting
-- Training & technical support
+- Phân tích dữ liệu cho vấn đề pháp lý và tuân thủ
+- Quản lý và tối ưu hệ thống dữ liệu
+- Hỗ trợ hoạt động tuân thủ
+- Phát triển dashboard và báo cáo
+- Đào tạo và hỗ trợ kỹ thuật
 
 ### CÁCH TRẢ LỜI PHỎNG VẤN:
-**"FMCG + Compliance?"**
-- "Hữu Nghị Food experience: regulatory reporting, compliance tracking"
-- "Healthcare: strict compliance requirements, data security protocols"
-- "Supervisor role ready: đã train nhân viên, coordinate cross-functional teams"
+**"FMCG + Tuân thủ?"**
+- "Kinh nghiệm Hữu Nghị Food: báo cáo quy định, theo dõi tuân thủ"
+- "Y tế: yêu cầu tuân thủ nghiêm ngặt, giao thức bảo mật dữ liệu"
+- "Sẵn sàng vai trò Supervisor: đã đào tạo nhân viên, điều phối liên phòng ban"
 
 ---
 
-## 8. PNJ (CAO FINE JEWELLERY) 💎
+## 8. PNJ (CAO FINE JEWELLERY)
 **Vị trí:** Senior Data Analyst (Customer Experience)  
 **Địa điểm:** Tập đoàn PNJ, TP. Hồ Chí Minh  
 
 ### YÊU CẦU CHÍNH:
-- **Kinh nghiệm:** 3+ năm customer experience, marketing, data analytics, CRM
-- **Technical:** Excel, Google Sheets, dashboard tools (Google Data Studio, Power BI)
-- **Mindset:** System thinking, premium service sensitivity, innovation spirit
+- **Kinh nghiệm:** 3+ năm trải nghiệm khách hàng, marketing, phân tích dữ liệu, CRM
+- **Kỹ thuật:** Excel, Google Sheets, công cụ dashboard (Google Data Studio, Power BI)
+- **Tư duy:** System thinking, nhạy cảm dịch vụ cao cấp, tinh thần đổi mới
 
 ### TRÁCH NHIỆM CHÍNH:
-- **Data & CX Systems (70%):** CX metrics framework, NPS/CSAT/CES dashboards
-- **Customer Journey (30%):** Journey mapping, experience optimization, cross-channel coordination
-- Premium brand CX từ ground-up system building
+- **Dữ liệu & Hệ thống CX (70%):** Framework metrics CX, dashboard NPS/CSAT/CES
+- **Customer Journey (30%):** Lập bản đồ hành trình, tối ưu trải nghiệm, điều phối đa kênh
+- Xây dựng hệ thống CX thương hiệu cao cấp từ đầu
 
 ### CÁCH TRẢ LỜI PHỎNG VẤN:
-**"Luxury retail readiness?"**
-- "Healthcare premium service experience: high-touch, detail-oriented"
-- "Dashboard multi-dimensional analysis cho luxury customer segments"
-- "Cross-functional coordination essential trong luxury customer journey"
+**"Sẵn sàng cho bán lẻ xa xỉ?"**
+- "Kinh nghiệm dịch vụ cao cấp y tế: high-touch, chú trọng chi tiết"
+- "Dashboard phân tích đa chiều cho phân khúc khách hàng cao cấp"
+- "Điều phối liên phòng ban thiết yếu trong customer journey xa xỉ"
 
 ---
 
-## TỔNG HỢP STRENGTHS CHO MỌI PHỎNG VẤN:
+## TỔNG HỢP ĐIỂM MẠNH CHO MỌI PHỎNG VẤN
 
-### 🏆 **COMPETITIVE ADVANTAGES:**
-1. **Cross-industry experience:** FMCG → Healthcare → ready cho bất kỳ industry nào
-2. **4+ years proven track record:** Vượt hầu hết requirements (2-3 năm)
-3. **Technical + Business acumen:** Không chỉ technical mà hiểu business impact
-4. **End-to-end project management:** Từ requirements → implementation → results
-5. **Automation mindset:** Always find ways to optimize, không chỉ làm manual
+### **LỢI THẾ CẠNH TRANH:**
+1. **Kinh nghiệm đa ngành:** FMCG → Y tế → sẵn sàng cho bất kỳ ngành nào
+2. **Track record 4+ năm đã chứng minh:** Vượt hầu hết yêu cầu (2-3 năm)
+3. **Kỹ thuật + Hiểu biết kinh doanh:** Không chỉ technical mà hiểu tác động kinh doanh
+4. **Quản lý dự án end-to-end:** Từ yêu cầu → triển khai → kết quả
+5. **Tư duy tự động hóa:** Luôn tìm cách tối ưu, không chỉ làm thủ công
 
-### 💪 **KEY TALKING POINTS:**
-- **Dashboard cho BLĐ** → C-level decision support experience
-- **Data Warehouse SQL Server** → Strong technical foundation  
-- **AppSheet + React development** → Modern tech stack
-- **Cross-functional collaboration** → Business + Tech bridge
-- **Automation initiatives** → Process optimization focus
-- **Healthcare + FMCG experience** → Data-sensitive industries
+### **ĐIỂM NÓI CHÍNH:**
+- **Dashboard cho Ban lãnh đạo** → Kinh nghiệm hỗ trợ quyết định cấp C
+- **Data Warehouse SQL Server** → Nền tảng kỹ thuật vững chắc
+- **Phát triển AppSheet + React** → Tech stack hiện đại
+- **Hợp tác liên phòng ban** → Cầu nối Business + Tech
+- **Sáng kiến tự động hóa** → Trọng tâm tối ưu quy trình
+- **Kinh nghiệm Y tế + FMCG** → Các ngành nhạy cảm với dữ liệu
 
-### 🎯 **SALARY EXPECTATION:**
-**27-33M VND** (đã cập nhật trong CV) - phù hợp với senior level positions
+### **KỲ VỌNG LƯƠNG:**
+**27-33M VND** (đã cập nhật trong CV) - phù hợp với vị trí senior level
+
+---
+
+## CÔNG CỤ WEB CẦN TÌM HIỂU THÊM
+
+### **Business Intelligence & Visualization:**
+- **Tableau:** Nền tảng visualization mạnh (Ninja Van, VNG yêu cầu)
+- **Looker:** Google Cloud BI platform (Ninja Van yêu cầu)
+- **Google Data Studio:** Free tool từ Google (PNJ yêu cầu)
+
+### **Automation & Workflow:**
+- **Zapier:** No-code automation platform (Ahamove yêu cầu)
+- **Make (formerly Integromat):** Advanced automation tool (Ahamove yêu cầu)
+- **PySpark:** Big data processing with Python (VNG yêu cầu)
+
+### **Cloud & Database:**
+- **BigQuery:** Google Cloud data warehouse
+- **Snowflake:** Cloud data platform
+- **AWS Analytics:** Amazon cloud analytics suite
+
+### **CRM & Customer Analytics:**
+- **Salesforce Analytics:** CRM data analysis (có thể hữu ích cho PNJ)
+- **Google Analytics:** Web analytics (hữu ích cho e-commerce roles)
+- **Mixpanel:** Product analytics platform
