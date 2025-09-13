@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - Attention Is All You Need</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Attention Is All You Need (2017)
+        ## Bối cảnh trước Transformer
+        - **Thống trị bởi RNN/LSTM/GRU**
+          - Xử lý tuần tự (token by token)
+          - **Vấn đề cốt lõi**:
+            - Cổ chai tính toán, không thể song song hóa
+            - Vấn đề quên thông tin ở xa (vanishing gradient)
+            - Phải đi qua từng từ, rất chậm
+        - **CNN cũng được dùng**
+          - Nhìn vào "cửa sổ" từ ngữ
+          - Tốt hơn RNN về song song hóa, nhưng tầm nhìn bị giới hạn
+
+        ## Cuộc Cách Mạng Transformer
+        - **Tuyên ngôn**: Vứt bỏ hoàn toàn RNN và CNN
+        - **Triết lý**: Chỉ dùng cơ chế "Attention"
+        - **Ưu điểm đột phá**:
+          - **Song song hóa toàn diện**: Xử lý cả câu cùng lúc -> Tốc độ huấn luyện tăng vọt
+          - **Tầm nhìn toàn cục**: Mọi từ đều có thể "nhìn" thấy mọi từ khác
+          - **Hiệu quả vượt trội**: Đạt SOTA (State-of-the-Art) về dịch máy
+
+        ## Giải mã Kiến trúc Transformer
+        ### 1. Self-Attention: Trái tim của hệ thống
+        - **Câu hỏi nó trả lời**: "Với từ này, những từ nào khác trong câu là quan trọng nhất?"
+        - **Cơ chế**:
+          - **Query (Q)**: "Tao là từ A, tao đang tìm gì?"
+          - **Key (K)**: "Tao là từ B, tao có đặc tính gì?"
+          - **Value (V)**: "Tao là từ B, nếu mày thấy tao quan trọng, đây là thông tin tao cung cấp."
+        - **Scaled Dot-Product Attention**: Công thức tính toán sự tương quan giữa các từ
+
+        ### 2. Multi-Head Attention: Nhìn từ nhiều góc độ
+        - **Ý tưởng**: Một cái đầu (head) chỉ nhìn được một loại quan hệ. Nhiều đầu sẽ nhìn được nhiều loại.
+        - **Ví dụ**:
+          - Head 1: Tập trung vào quan hệ chủ-vị
+          - Head 2: Tập trung vào đại từ thay thế cho danh từ nào
+          - Head 3: Tập trung vào các từ đồng nghĩa/trái nghĩa
+        - **Kết quả**: Tạo ra một biểu diễn (representation) ngữ cảnh siêu phong phú
+
+        ### 3. Positional Encoding: Giải quyết vấn đề "vô trật tự"
+        - **Vấn đề**: Vì không xử lý tuần tự, mô hình không biết vị trí của từ
+        - **Giải pháp**: Thêm một vector chứa thông tin vị trí vào mỗi từ
+        - **Cách làm**: Dùng các hàm sin và cos với tần số khác nhau. Một cách cực kỳ thông minh và hiệu quả.
+
+        ### 4. Encoder-Decoder Stack
+        - **Encoder (Bộ mã hóa)**:
+          - Đọc câu đầu vào (ví dụ: tiếng Anh)
+          - Tạo ra một biểu diễn ngữ cảnh giàu thông tin
+          - Gồm nhiều lớp (layer) xếp chồng lên nhau
+        - **Decoder (Bộ giải mã)**:
+          - Dịch câu đó sang ngôn ngữ đầu ra (ví dụ: tiếng Việt)
+          - Vừa "nhìn" vào những từ đã dịch, vừa "nhìn" vào biểu diễn của Encoder
+          - Cũng gồm nhiều lớp xếp chồng
+
+        ### 5. Các thành phần khác
+        - **Feed-Forward Networks**: Một mạng nơ-ron đơn giản sau mỗi lớp Attention để xử lý thêm
+        - **Residual Connections & Layer Norm**: Các "đường tắt" và "bộ ổn áp" giúp huấn luyện các mô hình rất sâu mà không bị lỗi
+
+        ## Tại sao nó lại quan trọng đến vậy?
+        - **Nền tảng của AI hiện đại**: Khai sinh ra thế hệ BERT, GPT, T5...
+        - **Phá vỡ giới hạn về tốc độ và quy mô**: Cho phép huấn luyện các mô hình với hàng tỷ, nghìn tỷ tham số
+        - **Ứng dụng vượt ra ngoài NLP**: Dùng trong Computer Vision (Vision Transformers), sinh học (AlphaFold 2)...
+        - **Thay đổi tư duy**: Chứng minh rằng chỉ cần một cơ chế (Attention) đủ tốt, ta có thể xây dựng những hệ thống cực kỳ thông minh
+      </script>
+    </div>
+  </body>
+</html>
