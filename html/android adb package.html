@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap { width: 100%; height: 100vh; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+---
+markmap:
+  maxWidth: 390
+  colorFreezeLevel: 2
+---
+# Sơ đồ bóc trần package Android: Giữ, Xoá, Chửi, Phân tích bản chất
+## Google Apps & Dịch vụ nền
+- **com.google.android.youtube**
+  - YouTube: Xem video, quảng cáo, gây nghiện, làm loạn nhận thức.
+  - Rác hoặc cần, tuỳ thằng. Xoá được.
+  - `adb shell pm uninstall --user 0 com.google.android.youtube`
+- **com.google.android.gm**
+  - Gmail: Nhận/spam mail, lưu trữ thông tin cá nhân cho Google.
+  - Xoá được nếu không dùng, cẩn thận nếu xài mail quan trọng.
+  - `adb shell pm uninstall --user 0 com.google.android.gm`
+- **com.google.android.apps.photos**
+  - Google Photos: Backup ảnh, trộm dữ liệu cá nhân, AI nhận diện mặt mày.
+  - Xoá được, thích private thì gỡ.
+  - `adb shell pm uninstall --user 0 com.google.android.apps.photos`
+- **com.google.android.gms**
+  - Google Play Services: Máu hệ thống, connect account, sync, định vị, push, bảo mật.
+  - Xoá là máy “bốc mùi” luôn. Đừng ngu.
+  - **Không nên xoá**
+- **com.google.android.webview**
+  - WebView: Hàng trăm app phụ thuộc, xoá là báo lỗi, app văng hàng loạt.
+  - **Không nên xoá**
+- **com.google.android.apps.messaging**
+  - Messages: SMS/MMS kiểu Google, không dùng chuyển sang app khác thì xoá.
+  - `adb shell pm uninstall --user 0 com.google.android.apps.messaging`
+- **com.google.android.setupwizard**
+  - Hướng dẫn thiết lập máy mới, xong rồi thì “gần như vô dụng”.
+  - Xoá được, nhưng chỉ khi máy đã setup xong hết mọi thứ.
+  - `adb shell pm uninstall --user 0 com.google.android.setupwizard`
+- **com.google.android.cellbroadcastservice**
+  - Nhận cảnh báo khẩn cấp, thiên tai, bão lũ, AMBER alert.
+  - Xoá được, nhưng có nguy cơ mất cảnh báo khẩn cấp.
+  - `adb shell pm uninstall --user 0 com.google.android.cellbroadcastservice`
+- **com.google.android.printservice.recommendation**
+  - Đề xuất máy in, rảnh thì giữ, không in thì gỡ.
+  - `adb shell pm uninstall --user 0 com.google.android.printservice.recommendation`
+- **com.google.android.tts**
+  - Text-to-speech: Nói thay mặt máy, app đọc chữ, đọc đường đi, đọc tin nhắn.
+  - Xoá được nếu không dùng, nhưng nhiều app cần (Maps, đọc sách).
+  - `adb shell pm uninstall --user 0 com.google.android.tts`
+- **com.google.android.permissioncontroller**
+  - Quản lý quyền, cốt lõi bảo mật, gỡ là “tự sát”.
+  - **Không nên xoá**
+- **com.google.android.packageinstaller**
+  - Cài/Update app, xoá là khỏi cài gì luôn.
+  - **Không nên xoá**
+- **com.google.android.documentsui**
+  - File manager, chọn file upload, lưu file từ app.
+  - Xoá được nhưng dễ lỗi upload/download file.
+  - `adb shell pm uninstall --user 0 com.google.android.documentsui`
+- **com.google.android.networkstack**
+  - Quản lý mạng, mất là mạng “bốc mùi”.
+  - **Không nên xoá**
+
+## Samsung Rác, Dịch vụ, Ảo tưởng quyền lực
+- **com.samsung.android.bixby.agent**
+  - Bixby: Trợ lý ảo “ngáo đá”, nặng máy, không ai dùng.
+  - Xoá được, nên gỡ cho đỡ bực.
+  - `adb shell pm uninstall --user 0 com.samsung.android.bixby.agent`
+- **com.samsung.android.app.notes**
+  - Samsung Notes: Ghi chú, đồng bộ, nhưng đa số chỉ để cài xong rồi quên.
+  - Xoá được, ai cần thì giữ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.app.notes`
+- **com.samsung.android.samsungpass**
+  - Samsung Pass: Tự điền mật khẩu, lưu login, ai không dùng thì gỡ.
+  - Xoá được, nhưng cân nhắc nếu hay quên pass.
+  - `adb shell pm uninstall --user 0 com.samsung.android.samsungpass`
+- **com.samsung.android.game.gametools**
+  - Game Tools: FPS, quay màn, hút pin, “bơm máu” cho gamer.
+  - Xoá được, không game thì gỡ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.game.gametools`
+- **com.samsung.android.mobileservice**
+  - Dịch vụ nền Samsung, sync linh tinh, đa số rác.
+  - Xoá được, ai không sync Samsung thì gỡ đi cho nhẹ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.mobileservice`
+- **com.samsung.android.honeyboard**
+  - Bàn phím Samsung, ai dùng Gboard thì gỡ được, nhớ cài bàn phím khác trước.
+  - `adb shell pm uninstall --user 0 com.samsung.android.honeyboard`
+- **com.samsung.android.app.watchmanager**
+  - Kết nối đồng hồ Samsung, ai không xài đồng hồ thì gỡ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.app.watchmanager`
+- **com.samsung.android.smartsuggestions**
+  - Đề xuất thông minh, thật ra toàn spam “tào lao”.
+  - Xoá được, nhẹ máy.
+  - `adb shell pm uninstall --user 0 com.samsung.android.smartsuggestions`
+- **com.samsung.android.smartmirroring**
+  - Chiếu màn hình sang TV, ai không dùng thì gỡ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.smartmirroring`
+- **com.samsung.android.knox.***
+  - Knox: Bảo mật, quản lý thiết bị, “bó cổ” người dùng, không biết thì đừng đụng vào.
+  - **Không nên xoá, brick máy, mất bảo mật**
+- **com.samsung.android.app.parentalcare**
+  - Kiểm soát trẻ em, ai không có trẻ thì gỡ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.app.parentalcare`
+- **com.samsung.android.dynamiclock**
+  - Khoá hình nền động, màu mè, thích thì giữ, không thì gỡ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.dynamiclock`
+- **com.samsung.android.app.taskedge**
+  - Thanh “đa nhiệm” dạt bên, ai ghét thì gỡ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.app.taskedge`
+- **com.samsung.android.shortcutbackupservice**
+  - Backup shortcut, đa phần vô dụng với 99% người.
+  - Xoá được.
+  - `adb shell pm uninstall --user 0 com.samsung.android.shortcutbackupservice`
+
+## App hệ thống Android (Động vào là “ra đi” luôn)
+- **com.android.systemui**
+  - Giao diện hệ thống, thanh trạng thái, điều hướng, noti, gỡ là “sập đen như mày”.
+  - **Không được xoá**
+- **com.android.phone**
+  - Quản lý gọi, SIM, sóng sánh.
+  - **Không được xoá**
+- **com.android.settings**
+  - App Cài đặt, gỡ là khỏi chỉnh gì luôn.
+  - **Không được xoá**
+- **com.android.providers.contacts**
+  - Lưu danh bạ, gỡ là “ra đảo” không gọi được ai.
+  - **Không được xoá**
+- **com.android.providers.media**
+  - Quản lý media, nhạc, ảnh, gỡ là app nghe nhạc, xem ảnh “tạch”.
+  - **Không được xoá**
+- **com.android.providers.downloads**
+  - Quản lý download, gỡ là khỏi tải gì luôn.
+  - **Không được xoá**
+- **com.android.keychain**
+  - Lưu khoá bảo mật, mật khẩu wifi, v.v.
+  - **Không được xoá**
+- **com.android.packageinstaller**
+  - Cài app, update, gỡ là “chết đứng”.
+  - **Không được xoá**
+- **com.android.shell**
+  - Quyền thao tác hệ thống qua adb, dev tools.
+  - **Không được xoá**
+- **com.android.location.fused**
+  - Định vị, nhiều app cần, gỡ là “mù đường”
+  - **Không được xoá**
+
+## App bên ngoài, cài thêm, rác hoặc báu vật tuỳ mày
+- **com.x8bit.bitwarden**
+  - Bitwarden: Quản lý mật khẩu, ai không dùng thì gỡ.
+  - `adb shell pm uninstall --user 0 com.x8bit.bitwarden`
+- **notion.id**
+  - Notion: Quản lý ghi chú, project, ai không xài thì gỡ.
+  - `adb shell pm uninstall --user 0 notion.id`
+- **com.brave.browser**
+  - Brave: Trình duyệt chống quảng cáo, ai thích Chrome thì gỡ.
+  - `adb shell pm uninstall --user 0 com.brave.browser`
+- **com.pcloud.pcloud**
+  - pCloud: Lưu trữ mây, không xài thì gỡ.
+  - `adb shell pm uninstall --user 0 com.pcloud.pcloud`
+- **com.openai.chatgpt**
+  - ChatGPT, AI bla bla, không xài thì gỡ.
+  - `adb shell pm uninstall --user 0 com.openai.chatgpt`
+- **com.xmind.doughnut**
+  - XMind: Vẽ mindmap, ai không xài thì gỡ.
+  - `adb shell pm uninstall --user 0 com.xmind.doughnut`
+- **com.cxinventor.file.explorer**
+  - File Explorer: Quản lý file, không xài thì gỡ.
+  - `adb shell pm uninstall --user 0 com.cxinventor.file.explorer`
+
+## Các package rác, phụ, quảng cáo, dịch vụ nền (Cứ mạnh dạn dọn)
+- **com.samsung.android.smartsuggestions**
+  - Đề xuất ngu học, toàn push quảng cáo, gỡ cho nhẹ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.smartsuggestions`
+- **com.sec.android.app.samsungapps**
+  - Samsung Apps: Cửa hàng app riêng, toàn rác.
+  - `adb shell pm uninstall --user 0 com.sec.android.app.samsungapps`
+- **com.sec.android.app.quicktool**
+  - Công cụ nhanh, đa phần không ai dùng.
+  - `adb shell pm uninstall --user 0 com.sec.android.app.quicktool`
+- **com.samsung.android.service.airviewdictionary**
+  - Từ điển pop-up, lười thì gỡ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.service.airviewdictionary`
+- **com.samsung.android.dynamiclock**
+  - Khoá động, rối mắt, gỡ cho nhẹ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.dynamiclock`
+- **com.samsung.android.game.gos**
+  - Game Optimizing Service: “Bóp hiệu năng” game, gỡ nếu muốn max FPS.
+  - `adb shell pm uninstall --user 0 com.samsung.android.game.gos`
+- **com.samsung.android.appseparation**
+  - Tạo môi trường app riêng, không cần thì gỡ.
+  - `adb shell pm uninstall --user 0 com.samsung.android.appseparation`
+
+## Knox, bảo mật, quản lý doanh nghiệp (Đụng vào là “thở oxy”)
+- **com.samsung.android.knox.***
+  - Knox: Bảo mật, quản lý thiết bị, không biết chơi thì đừng động.
+  - **Không nên xoá**
+- **com.sec.enterprise.knox.***
+  - Knox Doanh nghiệp, gỡ là toang bảo mật, bootloop.
+  - **Không nên xoá**
+
+## Xoá được (an toàn, không ảnh hưởng hệ thống)
+- App Google phổ thông (trừ core service)
+- App Samsung rác, đề xuất, quảng cáo, đồng bộ
+- App bên ngoài (tự cài)
+- Các app “tính năng phụ” không dùng
+
+## Không nên xoá (máu hệ thống, bảo mật, lõi)
+- Core Android (systemui, phone, providers, packageinstaller, location, settings)
+- Google Play Services, WebView, Permission Controller
+- Knox, các dịch vụ bảo mật, quản lý thiết bị
+
+      </script>
+    </div>
+  </body>
+</html>

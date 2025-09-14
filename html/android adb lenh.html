@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap { width: 100%; height: 100vh; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+---
+markmap:
+  maxWidth: 400
+  colorFreezeLevel: 2
+---
+# Toàn tập lệnh ADB – Dọn não trước khi nghịch
+## Lệnh cơ bản (Ai cũng nên biết, an toàn)
+- `adb devices`
+  - Liệt kê thiết bị đang kết nối. Không hại, dùng kiểm tra kết nối.
+- `adb version`
+  - Xem phiên bản adb. Chỉ để biết cho vui.
+- `adb help`
+  - Xem các lệnh adb hỗ trợ, đọc cho sáng mắt.
+
+## Lệnh thao tác file (Nguy cơ xóa nhầm, cẩn thận)
+- `adb push <local> <remote>`
+  - Chép file từ máy tính lên điện thoại. Hại khi push nhầm chỗ.
+- `adb pull <remote> <local>`
+  - Tải file từ điện thoại về PC. An toàn.
+- `adb shell ls <dir>`
+  - Liệt kê file/thư mục trong máy. An toàn, trừ khi mày “rm” nhầm.
+- `adb shell rm <file>`
+  - Xóa file trên máy. Nguy hiểm, xóa nhầm là đi luôn.
+
+## Lệnh quản lý app (Gỡ, tắt, reset, xóa - Dùng đúng thì bá, ngu thì toang)
+- `adb shell pm list packages`
+  - Liệt kê toàn bộ package đã cài.
+- `adb shell pm uninstall --user 0 <package>`
+  - Gỡ app cho user hiện tại. Nguy hiểm nếu gỡ nhầm system app.
+- `adb shell pm disable-user --user 0 <package>`
+  - Tắt app tạm thời. An toàn hơn uninstall, nhưng vẫn phải biết mày làm gì.
+- `adb shell pm enable <package>`
+  - Bật lại app đã disable.
+- `adb shell pm clear <package>`
+  - Xóa sạch data app (reset trắng). Lỡ tay là mất hết dữ liệu app đó.
+
+## Lệnh thao tác shell/hệ thống (Động vào là xác định)
+- `adb shell`
+  - Mở command line trên máy, nghịch gì cũng được – cẩn thận!
+- `adb reboot`
+  - Khởi động lại máy. Bình thường không sao, nhưng máy lỗi là bootloop.
+- `adb reboot bootloader`
+  - Khởi động vào bootloader. Đừng nghịch nếu không biết unlock/flash.
+- `adb reboot recovery`
+  - Vào chế độ recovery. Bình thường không sao, nhưng flash nhầm là đi.
+
+## Lệnh root, flash, unlock bootloader (Cực nguy hiểm, dân pro mới dám thử)
+- `adb root`
+  - Chạy adb ở chế độ root (cần máy đã root). Sai là hỏng máy.
+- `adb remount`
+  - Mount lại file hệ thống ở chế độ ghi (cần root). Gõ nhầm là vỡ hệ thống.
+- `adb sideload <file.zip>`
+  - Flash ROM/Update qua recovery. Flash nhầm là “cục gạch”.
+- `fastboot oem unlock`
+  - Mở khóa bootloader. Xóa sạch dữ liệu, bảo hành bay màu, brick là thường.
+
+## Lệnh đặc biệt, nguy hiểm, ít ai dám thử
+- `adb shell su`
+  - Vào shell root (máy phải root trước). Cực nguy hiểm, chỉ dân cứng.
+- `adb shell am broadcast -a <action>`
+  - Gửi intent hệ thống, tự động hóa, spam, hoặc làm loạn.
+- `adb shell monkey -p <package> -v <count>`
+  - Test ứng dụng bằng “khỉ điên” – spam ngẫu nhiên, dễ crash app.
+- `adb shell screencap -p /sdcard/screen.png`
+  - Chụp màn hình qua adb.
+- `adb shell screenrecord /sdcard/demo.mp4`
+  - Quay màn hình qua adb.
+
+## Lệnh quản lý logs, debug, theo dõi app (Dành cho dev, an toàn)
+- `adb logcat`
+  - Xem log hệ thống real-time. An toàn, chỉ đọc không phá.
+- `adb bugreport`
+  - Xuất báo cáo lỗi toàn hệ thống. Dùng cho dev, không phá.
+
+## Lệnh quản lý quyền, bảo mật (Động vào là mất quyền, hoặc “bốc mùi” app)
+- `adb shell pm grant <package> <permission>`
+  - Cấp quyền cho app (camera, storage...). Dùng cho app custom.
+- `adb shell pm revoke <package> <permission>`
+  - Thu hồi quyền app. Thu hồi nhầm là app lỗi.
+
+## Lệnh thao tác mạng, wifi, input (Tự động hóa, nghịch ngu là mất mạng)
+- `adb shell input text 'abc'`
+  - Gõ text tự động vào thiết bị.
+- `adb shell input keyevent <keycode>`
+  - Gửi phím bấm ảo (Enter, Home...).
+- `adb shell svc wifi enable/disable`
+  - Bật/tắt wifi. Dùng cho automation, chơi ngu là mất mạng.
+
+## Lệnh ẩn, hack, custom script (Chỉ cho dân nghịch thật sự)
+- `adb shell settings get|put <namespace> <key> <value>`
+  - Chỉnh sửa settings hệ thống. Sai là máy loạn, mất sóng, mất cảm ứng.
+- `adb tcpip 5555`
+  - Chuyển adb qua mạng wifi (nguy hiểm, ai trong mạng cũng root được máy).
+- `adb connect <ip>:5555`
+  - Kết nối adb qua wifi.
+
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap { width: 100%; height: 100vh; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+---
+markmap:
+  maxWidth: 420
+  colorFreezeLevel: 2
+---
+# Toàn tập “adb shell settings put” – Phá đảo hệ thống Android
+## Cấu trúc tổng quát
+- `adb shell settings put <namespace> <key> <value>`
+  - namespace: system, global, secure (và các nhánh phụ Android 8+)
+  - key: tên tham số chỉnh
+  - value: giá trị mới
+
+## Namespace “system” (Cài đặt user-level, dễ nghịch)
+- **screen_brightness**
+  - Đặt độ sáng màn hình (0-255)
+  - `adb shell settings put system screen_brightness 200`
+- **screen_off_timeout**
+  - Thời gian tắt màn hình (ms)
+  - `adb shell settings put system screen_off_timeout 60000`
+- **accelerometer_rotation**
+  - Bật/tắt xoay màn hình tự động (1:bật, 0:tắt)
+  - `adb shell settings put system accelerometer_rotation 0`
+- **volume_ring / volume_music / volume_alarm**
+  - Đặt âm lượng chuông, nhạc, báo thức (0-max)
+- **vibrate_when_ringing**
+  - Rung khi có cuộc gọi (1:bật, 0:tắt)
+- **dtmf_tone**
+  - Âm khi bấm số điện thoại (1:bật, 0:tắt)
+- **notification_light_pulse**
+  - Đèn LED notification (1:bật, 0:tắt, tuỳ máy)
+- **font_scale**
+  - Độ lớn chữ (1.0 là mặc định, 1.2 to hơn...)
+- **user_rotation**
+  - Góc quay màn hình mặc định (0: dọc, 1: ngang phải, 2: dọc ngược, 3: ngang trái)
+- **sound_effects_enabled**
+  - Âm hiệu ứng hệ thống (1:bật, 0:tắt)
+- **mode_ringer**
+  - Chế độ chuông (1:chuông, 2:rung, 0:tắt âm)
+
+## Namespace “global” (Đụng là ảnh hưởng toàn hệ thống, cẩn thận)
+- **airplane_mode_on**
+  - Bật/tắt chế độ máy bay (1:bật, 0:tắt)
+  - `adb shell settings put global airplane_mode_on 1`
+- **wifi_on**
+  - Bật/tắt wifi (1:bật, 0:tắt)
+- **mobile_data**
+  - Dữ liệu di động (1:bật, 0:tắt)
+- **auto_time**
+  - Lấy giờ tự động (1:bật, 0:tắt)
+- **auto_time_zone**
+  - Lấy múi giờ tự động (1:bật, 0:tắt)
+- **adb_enabled**
+  - Bật adb qua USB (1:bật, 0:tắt) – nguy hiểm, không biết thì đừng nghịch
+- **development_settings_enabled**
+  - Bật Developer Options (1:bật, 0:tắt)
+- **data_roaming**
+  - Roaming dữ liệu (1:bật, 0:tắt)
+- **stay_on_while_plugged_in**
+  - Không tắt màn hình khi sạc (1:bật)
+- **network_preference**
+  - Ưu tiên mạng (1:GSM, 2:WCDMA, 3:LTE, tuỳ máy)
+- **window_animation_scale / transition_animation_scale / animator_duration_scale**
+  - Tăng/giảm tốc độ hiệu ứng chuyển cảnh (0: tắt, 1: bình thường, nhỏ hơn tăng tốc)
+- **install_non_market_apps**
+  - Cho phép cài app ngoài CH Play (1:bật, 0:tắt)
+- **bluetooth_on**
+  - Bật/tắt bluetooth (1:bật, 0:tắt)
+- **location_mode**
+  - Định vị (0:tắt, 1:GPS only, 2:WiFi, 3:Full)
+
+## Namespace “secure” (Toàn cài đặt bảo mật, “bố đời”, gõ nhầm là ăn hành)
+- **lock_screen_show_notifications**
+  - Hiện thông báo trên màn hình khoá (1:bật, 0:tắt)
+- **location_providers_allowed**
+  - Danh sách dịch vụ định vị được phép (gps, network,...)
+- **install_non_market_apps**
+  - Cài app ngoài (1:bật, 0:tắt) – tuỳ Android, có thể bị khoá
+- **user_setup_complete**
+  - Đánh dấu máy đã setup xong (1)
+- **enabled_accessibility_services**
+  - Danh sách dịch vụ truy cập (accessibility), gõ nhầm là mất hết quyền hỗ trợ
+- **input_methods**
+  - Danh sách bàn phím hiện có, gõ nhầm là không gõ được nữa
+- **screensaver_enabled**
+  - Bật/tắt screensaver
+- **device_provisioned**
+  - Đánh dấu máy đã active (1:bật) – reset về 0 là máy về trạng thái “trinh”
+- **doze_enabled**
+  - Bật/tắt chế độ tiết kiệm pin Doze (1:bật, 0:tắt)
+- **install_non_market_apps**
+  - Cho phép cài app ngoài (1:bật, 0:tắt)
+
+## Những lệnh nguy hiểm (Xoá phát là “khóc”)
+- **adb shell settings put global adb_enabled 0**
+  - Tắt luôn quyền ADB, ngắt kết nối, không vào lại được dễ dàng
+- **adb shell settings put secure user_setup_complete 0**
+  - Máy về trạng thái setup mới, có thể bootloop
+- **adb shell settings put secure device_provisioned 0**
+  - Đánh dấu máy chưa active, app lỗi hàng loạt
+
+## Những lệnh hay ho (Dân chơi nên thử)
+- **adb shell settings put global window_animation_scale 0**
+  - Tắt hiệu ứng chuyển cảnh, máy mượt như “hack”
+- **adb shell settings put system screen_off_timeout 600000**
+  - Tăng thời gian tắt màn hình, đọc truyện không lo tắt
+- **adb shell settings put secure lock_screen_show_notifications 0**
+  - Tắt thông báo trên màn hình khoá, riêng tư hơn
+- **adb shell settings put system font_scale 1.2**
+  - Chữ to hơn, đỡ mỏi mắt
+
+## Các namespace phụ (ít gặp, máy đặc biệt)
+- **config**: Tuỳ chỉnh ẩn sâu, ít ai xài ngoài dev
+- **gservices**: Sync Google, phá là đi luôn sync
+- **ssi**: Một số máy đặc biệt, chọc vào thì “khóc ròng”
+
+## Tổng kết, cảnh báo
+- Lệnh “put” là hack não hệ thống, không biết thì đừng nghịch dại
+- Sai namespace/key là ăn hành, máy lỗi loạn, mất bảo hành
+- Dùng để tự động hoá, tối ưu, nghịch vui – nhớ backup trước khi “phá”
+
+      </script>
+    </div>
+  </body>
+</html>
