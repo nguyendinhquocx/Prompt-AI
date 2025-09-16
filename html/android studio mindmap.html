@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Android Development Mindmap</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+        font-family: "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+---
+markmap:
+  maxWidth: 300
+  colorFreezeLevel: 2
+---
+# Lập trình Android với Android Studio
+
+## 1. Môi trường & Cài đặt (Nền móng)
+- **Android Studio**: IDE chính, là "căn cứ địa" của mày.
+- **Java JDK**: Ngôn ngữ nền, bắt buộc phải có.
+- **Android SDK**: Bộ công cụ & thư viện.
+  - SDK Platforms: Các phiên bản Android (API level).
+  - SDK Tools: `adb`, `emulator`, `build-tools`.
+- **Emulator (AVD) / Máy thật**: Nơi chạy thử sản phẩm.
+
+## 2. Cấu trúc Project (Bản thiết kế)
+- **`app` (Module chính)**: Nơi chứa 99% code của mày.
+  - `manifests/AndroidManifest.xml`: "Chứng minh thư" của app, khai báo mọi thứ.
+  - `java`/`kotlin`: Mã nguồn, bộ não của app.
+  - `res` (Tài nguyên):
+    - `drawable`: Hình ảnh, icon.
+    - `layout`: Bố cục giao diện (XML).
+    - `values`: Dữ liệu tĩnh (chuỗi, màu sắc, style).
+    - `mipmap`: Icon chính của ứng dụng.
+- **`gradle` (Hệ thống build)**: "Thằng quản đốc" xây dựng app.
+  - `build.gradle.kts`: File cấu hình, khai báo thư viện (dependencies).
+  - `settings.gradle.kts`: Quản lý các module trong project.
+
+## 3. Các Thành phần Chính (Gạch & Vữa)
+- **`Activity`**: Một màn hình mà người dùng thấy.
+- **`Fragment`**: Mảnh ghép UI, có thể tái sử dụng trong Activity.
+- **`Service`**: Chạy ngầm, không có giao diện (ví dụ: phát nhạc).
+- **`Broadcast Receiver`**: Lắng nghe sự kiện hệ thống (ví dụ: máy bay, sạc pin).
+- **`Content Provider`**: Cầu nối chia sẻ dữ liệu giữa các app.
+
+## 4. Xây dựng Giao diện (Mặt tiền)
+- **Kiểu truyền thống (XML View)**
+  - `View` & `ViewGroup`: Nền tảng của mọi thứ.
+  - `ConstraintLayout`, `LinearLayout`: Cách sắp xếp các View.
+  - `TextView`, `Button`, `ImageView`: Các thành phần cơ bản.
+- **Kiểu hiện đại (Jetpack Compose)**
+  - Lập trình giao diện bằng code Kotlin.
+  - `Composable` function: Đơn vị xây dựng UI.
+  - State-driven UI: Giao diện tự cập nhật khi dữ liệu thay đổi.
+
+## 5. Quản lý Dữ liệu & Logic (Não bộ)
+- **Kiến trúc (Architecture)**
+  - **MVVM**: Model-View-ViewModel (phổ biến nhất).
+  - **MVI**: Model-View-Intent.
+  - **Clean Architecture**: Phân lớp rõ ràng, dành cho dự án lớn.
+- **Lấy dữ liệu (Data Fetching)**
+  - **Retrofit**: Gọi API từ server.
+  - **Room**: Lưu trữ dữ liệu vào database trên máy.
+- **Xử lý bất đồng bộ (Async)**
+  - **Coroutines & Flow (Kotlin)**: Cách xử lý tác vụ ngầm hiện đại, gọn gàng.
+
+## 6. Build, Debug & Test (Kiểm tra chất lượng)
+- **Build APK/AAB**: Đóng gói sản phẩm.
+- **Logcat**: "Hộp đen" ghi lại mọi hoạt động, lỗi lầm của app.
+- **Debugger**: Soi từng dòng code để tìm lỗi.
+- **Profiler**: Đo hiệu năng (CPU, RAM, pin).
+- **Unit Test / UI Test**: Viết code để tự động kiểm tra code khác.
+
+## 7. Xuất bản (Đem ra chợ bán)
+- **Google Play Console**: Cổng để tải app lên Google Play.
+- **Signing App**: Ký tên vào app để xác nhận chính chủ.
+- **App Bundle (.aab)**: Định dạng gói mới, tối ưu cho người dùng.
+      </script>
+    </div>
+  </body>
+</html>
