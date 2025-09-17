@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysis: Vape Web Server by hacker new</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Chạy Web Server trên Vape Dùng Một Lần
+
+        ## 💡 Ý tưởng điên rồ
+        - Ban đầu chỉ tận dụng pin từ vape cũ.
+        - Phát hiện vape "xịn" chứa MCU 32-bit ARM (PUYA PY32) thay vì ASIC.
+        - **Thử thách**: Biến một thứ vứt đi thành một web server.
+
+        ## 🔬 Phần cứng "cùi bắp"
+        - **Chip**: PUYA PY32F002B
+        - **CPU**: 24MHz Cortex-M0+
+        - **Flash**: 24KiB (Lưu trữ code)
+        - **RAM**: 3KiB (Bộ nhớ tạm)
+        - Hãng sản xuất tử tế tới mức dán nhãn cả chân debug.
+
+        ## 🔗 Thủ thuật kết nối (Cốt lõi của project)
+        - **Vấn đề**: Chip không có Wi-Fi hay Ethernet.
+        - **Giải pháp**: Dùng **Semihosting**.
+          - Đây là một giao thức **debug** cho ARM.
+          - Cho phép MCU gửi "syscall" đến máy tính đang debug nó.
+          - Biến một kênh debug thành một kênh giao tiếp 2 chiều.
+        - **Tạo giao diện mạng ảo**:
+          - Dùng **SLIP** (Serial Line Internet Protocol) - giao thức mạng cổ lỗ sĩ chạy trên đường truyền serial.
+          - **Luồng dữ liệu**:
+            - MCU (Vape) <-Semihosting-> `pyOCD` (PC)
+            - `pyOCD` <-Telnet-> `socat` (PC)
+            - `socat` tạo ra TTY ảo (cổng serial ảo)
+            - `slattach` (Linux) biến TTY ảo thành giao diện mạng (`sl0`).
+
+        ## 💻 Stack phần mềm
+        - **Trên PC**: `pyOCD`, `socat`, `slattach` để tạo cầu nối.
+        - **Trên Vape (MCU)**:
+          - **uIP**: Một TCP/IP stack siêu nhẹ cho vi điều khiển.
+          - Port code SLIP của uIP để chạy qua kênh semihosting.
+          - Có sẵn một ví dụ HTTP server tối giản.
+
+        ## 🚀 Tối ưu hóa hiệu năng
+        - **Phiên bản đầu**: Cực tệ!
+          - Ping ~1.5s, mất 50% gói tin.
+          - Tải trang > 20 giây.
+        - **Nguyên nhân**:
+          - I/O theo từng byte một, overhead của semihosting quá lớn.
+          - Lỗi memory alignment trong code checksum của uIP trên ARM.
+        - **Giải pháp**:
+          - Dùng 3KiB RAM "khổng lồ" để tạo **ring buffer**.
+          - Dữ liệu được đọc/ghi theo khối lớn thay vì từng byte.
+        - **Kết quả "Blazing Fast"**:
+          - Ping: **20ms**.
+          - Không mất gói tin.
+          - Tải trang: **~160ms**.
+
+        ## ✨ Tính năng mở rộng
+        - **Tài nguyên sử dụng**: ~21% Flash, ~45% RAM.
+        - Vẫn còn thừa tài nguyên để chạy tác vụ khác.
+        - Thêm một JSON API endpoint để trả về số request và ID của chip, chứng tỏ khả năng chạy code server-side (dynamic).
+      </script>
+    </div>
+  </body>
+</html>

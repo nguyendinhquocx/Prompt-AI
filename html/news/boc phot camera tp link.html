@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - Phân tích TP-Link Tapo</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Bóc phốt camera TP-Link Tapo
+        ## Động cơ ban đầu
+        - Muốn xem con chó ở nhà làm gì
+        - Bực mình vì quá trình cài đặt khó khăn
+          - Tích hợp vào **Frigate** rất đau đớn
+          - Âm thanh 2 chiều chỉ hoạt động với giao thức độc quyền `tapo://`
+        - Phát hiện hành vi lạ
+          - Đổi mật khẩu cloud, nhưng camera không nhận mật khẩu mới
+          - Suy luận: Phải có một mật khẩu mặc định hoặc một cơ chế đồng bộ lúc cài đặt.
+        - Mục tiêu: Tạo ra một giải pháp cài đặt **không cần cloud (cloudless)**
+
+        ## Kế hoạch hành động: Man-in-the-Middle (MITM)
+        - Mục tiêu: Nghe lén giao tiếp giữa app Tapo và camera.
+        - Thách thức:
+          - App điện thoại hiện đại rất khó bị MITM
+          - Chúng phớt lờ proxy, không tin certificate của hệ thống
+          - Sử dụng **Certificate Pinning**
+        - Giải pháp:
+          - Dùng **Frida** để can thiệp động (dynamic instrumentation)
+          - Ép app phải dùng proxy và certificate chỉ định
+          - Vô hiệu hóa certificate pinning
+        - Công cụ: `mitmproxy` trên laptop + `Frida scripts` trên điện thoại
+
+        ## Quá trình thực thi & Phát hiện
+        ### Giai đoạn 1: Nghe lén
+        - Thấy được luồng login ban đầu *trước khi* camera biết mật khẩu cloud.
+        - Các request sau đó bị mã hóa qua một kênh gọi là `securePassthrough`
+        - **Kết luận:**
+          - 100% có mật khẩu mặc định.
+          - TP-Link dùng kênh mã hóa riêng để che giấu API.
+
+        ### Giai đoạn 2: Dịch ngược file APK
+        - Công cụ: **JADX**
+        - Mục tiêu: Tìm mật khẩu mặc định được hardcode trong app.
+        - Manh mối: Request login ban đầu dùng username là `admin`.
+        - **Phát hiện VÀNG:**
+          - Tìm thấy hàm trả về mật khẩu cho `encrypt_type: 3`.
+          - Mật khẩu mặc định là `TPL075526460603`
+
+        ### Giai đoạn 3: Giải mã `securePassthrough`
+        - Đã có mật khẩu mặc định -> có thể tạo ra session key.
+        - Tham khảo thư viện **PyTapo** để hiểu luồng xác thực.
+        - Viết một script Python cho `mitmproxy` (`tapo_decrypt_pretty.py`)
+        - **Chức năng của script:**
+          - Theo dõi quá trình handshake để lấy session key.
+          - Tự động giải mã các request/response bị mã hóa.
+          - Hiển thị nội dung đã giải mã trực tiếp trên giao diện `mitmproxy`.
+
+        ## Kết quả cuối cùng
+        ### Phân tích các API call
+        - Lọc ra được những API call thực sự quan trọng:
+          - `scanApList`: Quét danh sách Wi-Fi.
+          - `connectAp`: Kết nối vào Wi-Fi.
+          - `changeAdminPassword`: Đổi mật khẩu mặc định sang mật khẩu người dùng.
+          - `setAccountEnabled` + `changeThirdAccount`: Bật tài khoản RTSP/ONVIF.
+        - Các call còn lại đều là rác (timezone, quảng cáo, bind to cloud...).
+
+        ### Sản phẩm cuối cùng
+        - Một file Bash script: `tapo_onboard.sh`
+        - **Tính năng:**
+          - Đăng nhập bằng mật khẩu mặc định.
+          - Quét và kết nối Wi-Fi.
+          - Tắt logo OSD phiền nhiễu.
+          - Bật RTSP/ONVIF.
+          - Đổi mật khẩu admin.
+          - Hoàn toàn không cần cloud.
+
+        ## Đánh giá của tác giả về firmware Tapo
+        - Như một mớ hỗn độn được chắp vá.
+        - Chỗ thì dùng SHA-256, chỗ thì vẫn dùng **MD5** (từ năm 2003).
+        - Cơ chế gửi mật khẩu lằng nhằng, khó hiểu.
+        - Việc đồng bộ mật khẩu giữa app và thiết bị là "dựa trên niềm tin".
+        - **Kết luận:** An ninh được làm bởi một hội "mật mã học ghế bành".
+
+        ## Cú chốt
+        - Con chó ở nhà chỉ **ngủ**.
+      </script>
+    </div>
+  </body>
+</html>

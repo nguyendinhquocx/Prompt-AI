@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - React Won by Default</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Cái Bẫy Mặc Định Của React
+        ## Vấn đề Cốt lõi
+        - React thắng vì là lựa chọn **mặc định**, không phải vì kỹ thuật vượt trội
+        - Lựa chọn theo thói quen thay vì phân tích yêu cầu
+        - Hiệu ứng mạng lưới bóp nghẹt sự đổi mới
+
+        ## Giới hạn Kỹ thuật của React (Trần Đổi Mới)
+        - **Virtual DOM**: "Là chi phí overhead thuần túy"
+        - **Hooks**: Giới thiệu sự phức tạp mới (dependency arrays, stale closures)
+        - **Server Components**: Cải thiện TFB nhưng tăng độ phức tạp kiến trúc
+        - **React Compiler**: Một sự thừa nhận rằng mô hình gốc cần được tối ưu hóa từ bên ngoài
+
+        ## Các Framework Bị Bỏ Quên
+        - ### Svelte: Cách mạng Biên dịch
+          - Chuyển công việc sang lúc build, runtime tối thiểu
+          - Không có Virtual DOM
+          - Bị cản trở vì "không có nhiều việc làm"
+          - **Ví dụ**: Shawn Wang giảm kích thước trang từ 187KB (React) xuống 9KB (Svelte)
+        - ### Solid: Tiếp cận Phản ứng Nguyên thủy
+          - Phản ứng chi tiết (fine-grained reactivity), không cần reconciliation
+          - Hiệu năng cao nhưng ít người biết đến
+        - ### Qwik: Đổi mới Resumability
+          - Khởi động tức thì, không cần hydration
+          - Lý tưởng cho các trang lớn, mạng chậm
+
+        ## Nhà tù Hiệu ứng Mạng lưới
+        - **Tuyển dụng**: Tin tuyển dụng chỉ yêu cầu "React dev"
+        - **Quán tính**: Thư viện component và thói quen của team
+        - **Ngại rủi ro**: Lãnh đạo chọn giải pháp "an toàn"
+        - **Giáo dục**: Trường học dạy những gì thị trường yêu cầu
+
+        ## Phản biện & Bác bỏ
+        - **"Hệ sinh thái trưởng thành!"**: Trưởng thành cũng đồng nghĩa với quán tính và cồng kềnh.
+        - **"Khó tuyển dụng!"**: Hãy tuyển dụng dựa trên nền tảng, không phải framework.
+        - **"Thư viện component!"**: Sử dụng Web Components hoặc design system bất khả tri.
+        - **"Sự ổn định!"**: API của React liên tục thay đổi (class -> hooks -> RSC).
+        - **"Đã được chứng minh ở quy mô lớn!"**: jQuery cũng vậy.
+
+        ## Lời kêu gọi Hành động
+        - **Lãnh đạo**: Chọn công cụ dựa trên phân tích, không phải đà phát triển.
+        - **Lập trình viên**: Học nhiều hơn một mô hình tư duy.
+        - **Nhà giáo dục**: Dạy các khái niệm nền tảng, không chỉ công cụ.
+        - **Hệ sinh thái**: Cần sự đa dạng để phát triển, không phải một nền độc canh.
+      </script>
+    </div>
+  </body>
+</html>

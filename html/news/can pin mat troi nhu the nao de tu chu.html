@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - Solar Battery Self-Sufficiency</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Cần pin mặt trời lớn cỡ nào để tự chủ 100%?
+        ## Bối cảnh & Vấn đề
+        - **Địa điểm**: Nhà ở London, Anh Quốc
+        - **Hiện trạng**:
+          - Đã lắp pin mặt trời
+          - Sản lượng ≈ Tiêu thụ (khoảng 3,800 kWh/năm)
+        - **Nghịch lý**:
+          - Mùa hè: Thừa điện, bán lại cho lưới
+          - Mùa đông: Thiếu điện, phải mua từ lưới
+        - **Sai lầm thường gặp**:
+          - Tính toán đơn giản cho 1 ngày là không đủ
+          - Ví dụ: Thừa 9.9kWh nhưng cần pin tới 13kWh do thời điểm dùng và sản xuất lệch nhau
+
+        ## Câu hỏi cốt lõi
+        - Cần pin **lớn cỡ nào** để trữ toàn bộ điện thừa mùa hè dùng cho mùa đông?
+        - Dữ liệu: **Dữ liệu thực tế** nhiều năm của chính ngôi nhà
+
+        ## Phân tích & Tính toán
+        - **Công cụ**: Python & thư viện Pandas
+        - **Phương pháp**:
+          1. Gộp dữ liệu CSV từ nhiều ngày
+          2. Sắp xếp theo thứ tự thời gian
+          3. Tính **chênh lệch tích lũy** (Cumulative Difference) giữa sản xuất và tiêu thụ
+          4. Tìm điểm thặng dư cao nhất trong năm
+        - **Kết quả**:
+          - **1,068 kWh**
+          - Về cơ bản là một cục pin **1 Megawatt-hour (MWh)**
+
+        ## Tính thực tiễn (Is this sensible?)
+        - **Câu trả lời**: **KHÔNG**
+        - **Lý do**:
+          - Không tính đến nhu cầu tương lai (xe điện, bỏ sưởi gas)
+          - Tối ưu hơn có thể là lắp thêm pin mặt trời
+          - Tác động môi trường khi sản xuất pin khổng lồ
+          - Thiết kế không hiệu quả (pin chỉ đầy 100% vài ngày/năm)
+          - Tận dụng lưới điện với các nguồn xanh khác (gió, thủy điện) có thể tốt hơn
+
+        ## Tính khả thi (Is this possible?)
+        - **Hiện tại**:
+          - Chi phí cho hộ gia đình: **Siêu đắt** (£100k - £500k)
+          - Các chi phí khác: Bảo trì, đất đai, giấy phép...
+        - **Tương lai**:
+          - Giá pin **Lithium-ion** đã giảm 90% trong 10 năm
+          - Công nghệ mới **Natri-ion** hứa hẹn giảm sâu hơn (xuống $10/kWh)
+          - Chi phí tiềm năng: **~£8,000** (tương đương chi phí lắp đặt pin mặt trời)
+
+        ## Kết luận & Tầm nhìn
+        - Điện mặt trời hộ gia đình **rất hiệu quả và thực tế**
+        - **Tầm nhìn tương lai**: Mỗi ngôi nhà có thể sở hữu pin 1 MWh để tự chủ hoàn toàn
+        - Một tương lai "tươi sáng và đầy nắng" cho năng lượng tại gia
+      </script>
+    </div>
+  </body>
+</html>
