@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by nguyendinhquocx (http://jsbin.com/jegaqax/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - Phân Tích Cuộc Họp Tăng Doanh Thu CHC</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Tăng Doanh Thu từ Khách Hàng Khám Sức Khỏe Doanh Nghiệp (CHC)
+
+        ## 1. Tình Hình Hiện Tại & Mục Tiêu
+        - **Thực trạng**
+          - Lượng khách CHC tăng 30% so với cùng kỳ (13k vs 9k)
+          - Mục tiêu năm: 25k lượt khám
+          - **Lãng phí lớn**: Bỏ lỡ cơ hội chuyển đổi khách sau khám thành khách hàng cá nhân (OBI)
+        - **Nỗ lực hiện tại (Manh mún)**
+          - Bác sĩ đọc kết quả, lọc ca bệnh nặng
+          - Sale thông báo cho nhân sự công ty
+          - Phát phiếu khám chuyên khoa miễn phí
+        - **Đánh giá**: Nhỏ lẻ, không hệ thống, không đo lường được hiệu quả
+
+        ## 2. Vấn Đề Cốt Lõi (Góc nhìn của tao)
+        - **Tư duy sai lầm**: Coi là vấn đề "sales" thay vì "hệ thống"
+        - **Lỗ hổng Dữ liệu & Trí tuệ**
+          - Có data nhưng không biến thành *actionable insights*
+          - Không có báo cáo tổng thể bệnh lý gửi cho công ty
+        - **Quy trình rời rạc & Bị động**
+          - Chờ có bệnh mới báo, thay vì chủ động tiếp cận
+          - Thiếu sự phối hợp giữa các phòng ban (Kinh doanh, KSK, IT, Marketing)
+        - **Điểm nghẽn hệ thống (Bottleneck)**
+          - **Thiếu nhân sự trầm trọng**: Đặc biệt là thư ký y khoa xử lý hồ sơ
+          - Gây chậm trả kết quả, giảm chất lượng dịch vụ, không thể triển khai thêm việc
+        - **Hệ thống IT không tích hợp**
+          - Khó khăn trong việc theo dõi khách hàng quay lại
+          - Lọc dữ liệu bệnh lý còn thủ công
+        - **Thiếu chủ sở hữu quy trình**: Ai chịu trách nhiệm cho hành trình khách hàng sau khám?
+
+        ## 3. Các Giải Pháp Được Đề Xuất
+        - **Giai đoạn sau khám**
+          - **Báo cáo tổng kết bệnh lý**
+            - Gửi kèm bộ hồ sơ trả về cho công ty
+            - Nêu bật các nhóm bệnh lý nổi trội
+            - Kèm khuyến cáo từ bệnh viện
+          - **Xây dựng chính sách ưu đãi (Voucher)**
+            - Miễn phí khám lần đầu
+            - Giảm % phí cận lâm sàng
+            - Kẹp vào hồ sơ cá nhân của người có bệnh lý
+          - **Tổ chức Health Talk/Hội thảo chuyên đề**
+            - Dựa trên nhóm bệnh lý nổi cộm của công ty
+            - Tăng nhận diện thương hiệu & giáo dục sức khỏe
+            - Chi phí tính vào P&L của gói khám
+        - **Thành lập đội chuyên trách**
+          - Gồm thư ký y khoa, điều dưỡng
+          - Chủ động gọi điện tư vấn cho từng người có bệnh lý
+          - Chăm sóc đặc biệt nhóm VIP, quản lý
+          - Nhắc nhở, chúc mừng (sinh nhật, lễ...)
+        - **Phát triển mảng Tiêm ngừa**
+          - Nhu cầu thực tế từ khách hàng là có
+          - **Vấn đề**: Nội tại chưa sẵn sàng (thiếu thuốc, quy trình cho số lượng lớn)
+          - Cơ hội doanh thu "tiền tươi thóc thật"
+
+        ## 4. Rào Cản & Thách Thức
+        - **Nhân sự là số 1**
+          - Đơn vị KSK quá tải, thiếu người từ bác sĩ đến điều dưỡng, thư ký
+          - Đề xuất tuyển thêm nhưng quy trình duyệt của tập đoàn chậm
+          - Ảnh hưởng trực tiếp đến tốc độ và chất lượng trả hồ sơ
+        - **Hệ thống & Quy trình nội bộ**
+          - **IT**: Cần hỗ trợ để tự động xuất báo cáo bệnh lý từ phần mềm
+          - **Labo (xét nghiệm)**: Khó có kết quả sớm trong buổi sáng cho khách đoàn
+          - **Chính sách chi trả ngoại viện**: Vướng mắc, gây khó khăn cho nhân viên đi công tác
+        - **Sự phối hợp liên phòng ban**
+          - Cần sự đồng bộ giữa Sales, KSK, Marketing, IT và các chuyên khoa
+
+        ## 5. Kế Hoạch & Phân Công
+        - **Phòng Kinh Doanh (Luân, Khanh, Quốc, Thơ)**
+          - Xây dựng tờ trình xin chính sách voucher/ưu đãi sau khám
+          - Phối hợp với Marketing để truyền thông chính sách
+          - Đề xuất khai thác data CHC để bán gói (ý kiến của anh Nhật)
+        - **Đơn vị Khám sức khỏe (Bs. Sơn, Bs. Đi)**
+          - Thúc đẩy IT hoàn thiện form xuất dữ liệu bệnh lý tự động (dự kiến tháng 10)
+          - Phối hợp xây dựng đội ngũ tư vấn sau khám
+          - Báo cáo chi tiết tình hình thiếu hụt nhân sự cho ban giám đốc (anh Nhật yêu cầu)
+        - **IT**
+          - Hỗ trợ xuất báo cáo bệnh lý
+          - Triển khai demo phần mềm của Labo để lọc kết quả bất thường sớm (tháng 10)
+        - **Ban Giám đốc (Bs. Long, Anh Nhật)**
+          - Phê duyệt chính sách
+          - Giải quyết vấn đề nhân sự cốt lõi
+          - Tháo gỡ vướng mắc về chính sách chi trả ngoại viện
+
+      </script>
+    </div>
+  </body>
+</html>
