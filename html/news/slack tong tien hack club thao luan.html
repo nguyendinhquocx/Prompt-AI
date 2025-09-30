@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - Phân Tích Vụ Côn Đồ Salesforce</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Vụ Án: Salesforce/Slack Tống Tiền Hack Club
+
+        ## 1. Các Bên Liên Quan
+        - **Nạn nhân**: Hack Club
+          - Tổ chức từ thiện 501(c)(3) dạy lập trình cho thanh thiếu niên 
+          - Đã có mối quan hệ 11 năm với Slack [cite: 12]
+        - **Thủ phạm**: Slack (thuộc sở hữu của Salesforce)
+          - Bị cộng đồng so sánh với Oracle về hành vi kinh doanh [cite: 17, 19]
+          - Salesforce bị cho là một "công ty bán hàng, không phải công ty công nghệ" [cite: 60]
+
+        ## 2. Tối Hậu Thư (The Ultimatum)
+        - **Bối cảnh**: Hack Club đang trả $5,000/năm sau khi chuyển từ gói miễn phí [cite: 1415, 1417]
+        - **Yêu cầu**:
+          - Thanh toán **$50,000 USD ngay trong tuần** 
+          - Cam kết hợp đồng mới **$200,000 USD/năm** 
+        - **Lời đe dọa**: Nếu không tuân thủ trong 5 ngày [cite: 9]
+          - Vô hiệu hóa không gian làm việc
+          - **Xóa vĩnh viễn 11 năm lịch sử tin nhắn** 
+        - **Bản chất**: Tăng giá 40 lần với thời hạn cực ngắn, một hành vi "nắm thóp" [cite: 697]
+
+        ## 3. Phản Ứng & Phân Tích (Hacker News)
+        - **Phẫn nộ & Chỉ trích**:
+          - Hành động thiển cận, tạo ra kẻ thù là thế hệ kỹ sư tương lai [cite: 14]
+          - Bị gọi là tống tiền, không khác gì ransomware [cite: 1346, 383]
+        - **Phân tích kinh doanh**:
+          - Đây là chiến lược "Enshittification": lôi kéo, khóa chân, rồi vắt kiệt 
+          - Salesforce đang cố gắng loại bỏ các khách hàng nhỏ, ít lợi nhuận [cite: 68, 69]
+          - Mô hình kinh doanh của các công ty được VC hậu thuẫn là có rủi ro [cite: 716]
+        - **Lời khuyên & Giải pháp**:
+          - **"Sở hữu dữ liệu của mày"**: Bài học cốt lõi được lặp lại nhiều lần [cite: 571, 694, 1450]
+          - **Chuyển sang FOSS (Phần mềm tự do nguồn mở)**: Lời kêu gọi sử dụng các giải pháp tự host
+            - Mattermost (lựa chọn của Hack Club) [cite: 607]
+            - Zulip 
+            - Matrix 
+            - Campfire (mới được mã nguồn mở) [cite: 571]
+
+        ## 4. Hành Động & Bài Học
+        - **Hành động của Hack Club**:
+          - Di chuyển khẩn cấp sang **Mattermost tự host** [cite: 607, 876]
+          - Cố gắng sao lưu toàn bộ dữ liệu [cite: 1196]
+        - **Bài học xương máu**:
+          - Sự phụ thuộc vào phần mềm độc quyền là một khoản nợ kỹ thuật và rủi ro chiến lược [cite: 17, 923]
+          - Dịch vụ SaaS (Software as a Service) có thể trở thành con tin bất cứ lúc nào [cite: 382, 407]
+          - Đừng bao giờ xây dựng kiến thức thể chế trên nền tảng của kẻ khác [cite: 572, 573]
+      </script>
+    </div>
+  </body>
+</html>

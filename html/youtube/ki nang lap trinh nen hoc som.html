@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - Kỹ năng lập trình nên học sớm</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Kỹ năng lập trình đáng lẽ nên học sớm hơn
+
+        ## Kỹ năng cơ học (Mechanical Skills)
+        - **Gõ phím nhanh**
+          - Không phải điều kiện tiên quyết nhưng rất hữu ích
+          - Tăng tốc độ lặp lại (iterate) và thử nghiệm
+          - Công cụ gợi ý: Monkey Type
+        - **Làm chủ Text Editor**
+          - Không nhất thiết phải là Vim/Emacs
+          - Hiểu sâu các tính năng của editor mày đang dùng
+          - Các khía cạnh cần nắm: điều hướng, xóa, phục hồi, phím tắt
+
+        ## Kiến thức nền tảng (Fundamental Knowledge)
+        - **Kiến thức Mạng (Networking)**
+          - Nhiều kỹ sư phần mềm thiếu hụt mảng này
+          - Mô hình OSI là một khái niệm cơ bản nhiều người không biết
+          - Gợi ý thực hành: Mua domain, host dự án và tự tìm cách đánh sập nó
+          - Sách gợi ý: TCP/IP Illustrated
+        - **Hiểu cách máy tính hoạt động**
+          - Server cũng chỉ là máy tính của người khác
+          - Không hiểu "under the hood" sẽ khiến mọi lỗi trông như một trò hù dọa
+          - Hậu quả của việc thiếu hiểu biết: vấn đề hiệu năng, crash, bug
+          - Nguồn tham khảo:
+            - Paper từ Red Hat
+            - Sách: Operating Systems Three Easy Pieces
+
+        ## Kỹ năng Tư duy & Công cụ (Cognitive & Tooling Skills)
+        - **Kỹ năng Đọc hiệu quả**
+          - Lập trình viên có tiếng là hay Google, nhưng gốc rễ là đọc kém
+          - Đọc sâu stack trace, câu trả lời trên Stack Overflow có thể giải quyết nhiều vấn đề
+          - Đọc sách lập trình đúng cách: Code trước, đọc sách sau để xác thực/sửa chữa tư duy
+        - **Sử dụng `curl`**
+          - Dùng cho các yêu cầu endpoint nhanh thay vì mở các công cụ nặng nề như Postman
+          - Lệnh cơ bản chỉ mất khoảng 10 phút để học
+          - Là một thư viện cực kỳ mạnh mẽ, có thể dùng cả trong ứng dụng
+        - **Print Debugging**
+          - Nhanh, linh hoạt, hoạt động ở mọi ngôn ngữ
+          - Không cần dùng các UI debugger phức tạp
+          - Buộc mày phải hiểu code: trạng thái biến, thứ tự gọi hàm, thời điểm code "phản bội"
+
+        ## Kỹ năng Con người (Human Skills)
+        - **Tử tế và Dễ làm việc cùng (Being Nice)**
+          - Đừng bắt chước sự cộc cằn của những người như Linus Torvalds, trừ khi mày giỏi như họ
+          - Dễ làm việc cùng có thể đưa mày đi xa hơn việc chỉ là một lập trình viên giỏi
+          - Code chỉ là một phần, mối quan hệ lâu dài quan trọng hơn
+          - Khi giới thiệu việc, người ta thường quan tâm đến việc mày dễ chịu thế nào hơn là code mày tốt ra sao
+          - Cần sự khiêm tốn và kiên nhẫn
+      </script>
+    </div>
+  </body>
+</html>

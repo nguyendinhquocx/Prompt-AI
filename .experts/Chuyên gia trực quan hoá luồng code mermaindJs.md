@@ -77,69 +77,12 @@ flowchart TD
     </div>
   </div>
 
-  <div class="controls">
-    <button id="downloadSvg">Tải SVG</button>
-    <button id="downloadPng">Tải PNG</button>
-  </div>
-
   <script>
     // khởi tạo mermaid
     if (typeof mermaid !== 'undefined') {
       mermaid.initialize({ startOnLoad: true, theme: 'default' });
     }
 
-    // helper để tải SVG (render xong mới lấy svg)
-    document.getElementById('downloadSvg').addEventListener('click', async function () {
-      try {
-        const svgEl = document.querySelector('.mermaid svg');
-        if (!svgEl) { alert('Chưa có SVG. Chờ render xong rồi thử lại.'); return; }
-        const serializer = new XMLSerializer();
-        const svgStr = serializer.serializeToString(svgEl);
-        const blob = new Blob([svgStr], { type: 'image/svg+xml;charset=utf-8' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'diagram.svg';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-      } catch (err) {
-        alert('Lỗi khi xuất SVG: ' + err);
-      }
-    });
-
-    // tải PNG bằng vẽ lên canvas
-    document.getElementById('downloadPng').addEventListener('click', async function () {
-      try {
-        const svgEl = document.querySelector('.mermaid svg');
-        if (!svgEl) { alert('Chưa có SVG. Chờ render xong rồi thử lại.'); return; }
-        const serializer = new XMLSerializer();
-        const svgStr = serializer.serializeToString(svgEl);
-        const canvas = document.createElement('canvas');
-        const bbox = svgEl.getBBox();
-        canvas.width = Math.ceil(bbox.width) + 20;
-        canvas.height = Math.ceil(bbox.height) + 20;
-        const ctx = canvas.getContext('2d');
-        const img = new Image();
-        const svgBlob = new Blob([svgStr], { type: 'image/svg+xml;charset=utf-8' });
-        const url = URL.createObjectURL(svgBlob);
-        img.onload = function () {
-          ctx.drawImage(img, 0, 0);
-          URL.revokeObjectURL(url);
-          const pngUrl = canvas.toDataURL('image/png');
-          const a = document.createElement('a');
-          a.href = pngUrl;
-          a.download = 'diagram.png';
-          document.body.appendChild(a);
-          a.click();
-          a.remove();
-        };
-        img.src = url;
-      } catch (err) {
-        alert('Lỗi khi xuất PNG: ' + err);
-      }
-    });
   </script>
 </body>
 </html>
