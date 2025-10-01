@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - Toán Học Trừu Tượng</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Hành Trình Trừu Tượng Hóa Của Toán Học
+
+        ## 1. Từ Khoa Học Tự Nhiên đến Logic Thuần Túy
+        - **Toán học sơ khai: Dựa trên thực tế** [cite: 8]
+          - $2+2=4$ vì ta quan sát thấy thế trong thế giới thực[cite: 10].
+        - **Vết nứt đầu tiên: Vấn đề Vô Hạn**
+          - **Nghịch lý Zeno**: Achilles không bao giờ đuổi kịp con rùa vì luôn có một khoảng cách nhỏ vô hạn ở giữa[cite: 16, 26, 27].
+          - Trực giác thông thường bắt đầu sụp đổ.
+        - **Giải tích (Calculus): Giải pháp & Vấn đề mới**
+          - Giải quyết nghịch lý Zeno: một chuỗi vô hạn có thể hội tụ thành một số hữu hạn[cite: 29].
+          - Nhưng lại tạo ra khái niệm "số vô cùng nhỏ" (infinitesimals) khó giải thích[cite: 30, 31].
+        - **Mục tiêu mới: Xây dựng lại toán học từ logic**
+          - Tìm cách định nghĩa số và phép toán mà không cần phụ thuộc vào thế giới vật lý[cite: 32, 33].
+
+        ## 2. Số học Peano: Số học không cần số
+        - **Nền tảng của Giuseppe Peano** [cite: 34]
+          - Chỉ cần 2 thứ: số `0` và hàm **kế thừa** `S(n)` (số tiếp theo của n)[cite: 35].
+        - **Định nghĩa số như những cái nhãn**
+          - $1 = S(0)$
+          - $2 = S(1)$
+          - Các con số chỉ là mối quan hệ kế thừa[cite: 36].
+        - **Phép cộng đệ quy** [cite: 39]
+          - Quy tắc 1: `a + 0 = a`
+          - Quy tắc 2: `a + S(b) = S(a + b)`
+          - **Ví dụ**: $2+2 = 2+S(1) = S(2+1) = S(2+S(0)) = S(S(2+0)) = S(S(2)) = S(3) = 4$[cite: 42, 45, 46].
+        - **Mục đích**
+          - Là một mô hình lý thuyết tối giản, tương tự như Máy Turing trong khoa học máy tính.
+
+        ## 3. Lý Thuyết Tập Hợp: Xây Dựng Số từ Hư Vô
+        - **Nền tảng: Tập hợp rỗng** `{}` (một cái hộp rỗng)[cite: 82, 86].
+        - **Định nghĩa Số Thứ Tự (Ordinals)** [cite: 96]
+          - $0 = \{\}$ [cite: 82]
+          - $1 = \{0\} = \{\{\}\}$ [cite: 84, 92]
+          - $2 = \{0, 1\} = \{\{\}, \{\{\}\}\}$ [cite: 92]
+          - Quy tắc chung: $n+1 = n \cup \{n\}$[cite: 100, 101].
+          - Mỗi số là một tập hợp chứa tất cả các số trước nó[cite: 97].
+
+        ## 4. Số học của Vô Hạn: Nơi Logic Bẻ Cong Trực Giác
+        - **Số vô hạn đầu tiên: Omega ($\omega$)**
+          - Định nghĩa: $\omega = \{0, 1, 2, 3, ...\}$ (tập hợp tất cả các số tự nhiên)[cite: 105, 111].
+        - **Các phép toán kỳ lạ**
+          - $\omega \neq \omega+1$. Vì tập hợp $\omega+1$ chứa thêm phần tử $\omega$ mà bản thân tập $\omega$ không có[cite: 122].
+          - **Phép cộng không giao hoán!**
+            - $1 + \omega = \omega$
+            - $\omega + 1 > \omega$
+            - **Kết quả**: $1 + \omega < \omega + 1$[cite: 130].
+
+        ## 5. Số Lượng (Cardinality): Một Cách "Đếm" Khác
+        - **Vấn đề**: Cách đếm thông thường không còn ý nghĩa với tập vô hạn[cite: 141].
+        - **Định nghĩa**: Hai tập hợp có cùng "kích thước" (số lượng) nếu có thể **so khớp 1-1** tất cả các phần tử[cite: 144, 169].
+        - **Nghịch lý của Vô hạn đếm được ($\aleph_0$)**
+          - Tập số tự nhiên ($\mathbb{N}$) và tập số chẵn có cùng số lượng, dù tập số chẵn là con của tập số tự nhiên[cite: 171, 185].
+        - **Các tập Vô hạn "lớn hơn"**
+          - **Lập luận chéo của Cantor**: Chứng minh không thể so khớp 1-1 giữa số tự nhiên và số thực[cite: 187, 202].
+          - Kết luận: Số lượng của tập số thực **lớn hơn** số lượng của tập số tự nhiên[cite: 207].
+
+        ## 6. Kết Luận
+        - Toán học trừu tượng là công cụ để tạo ra các thế giới logic nhất quán[cite: 210].
+        - Nó giải quyết các nghịch lý nhưng lại đi ngược trực giác.
+        - Một số trường phái toán học thậm chí còn bác bỏ sự tồn tại của các tập hợp vô hạn[cite: 211].
+        - Nhưng nếu không có nó, chúng ta mất đi một lượng lớn toán học hữu ích[cite: 213].
+      </script>
+    </div>
+  </body>
+</html>

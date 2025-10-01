@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - Claude Code 2.0</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Claude Code 2.0: Phân Tích Cộng Đồng
+
+        ## 🚀 Tính Năng Mới & Cải Tiến UX
+        - **Checkpoints & Rewind (`/rewind`)**
+          - Tính năng được hoan nghênh nhất [cite: 740, 743]
+          - Tự động lưu trạng thái code trước mỗi thay đổi [cite: 290]
+          - Cho phép quay lại cả code và ngữ cảnh hội thoại [cite: 305, 319]
+          - Phản biện: `git` hoặc `jujutsu` linh hoạt hơn [cite: 302, 729]
+        - **Giao diện & Trải nghiệm**
+          - Giao diện mới được khen là đẹp [cite: 844]
+          - Tích hợp VS Code extension mới [cite: 482]
+          - Nhưng extension bị chê là buggy và thiếu tính năng so với bản CLI [cite: 653, 837, 850]
+          - Thêm tìm kiếm lịch sử (Ctrl+R) [cite: 482, 859]
+        - **Plan Mode (Chế độ lập kế hoạch)**
+          - Gây tranh cãi: Bị cho là đã loại bỏ tùy chọn "Lập kế hoạch bằng Opus, code bằng Sonnet" [cite: 770, 831]
+          - Thực tế: Vẫn truy cập được bằng Shift+Tab [cite: 777, 783], hoặc lệnh `/model opusplan` [cite: 785]
+          - Nhiều người có workflow riêng, tự yêu cầu AI viết kế hoạch ra file markdown [cite: 790, 796]
+
+        ## 🛡️ Tranh Luận về An Toàn & Bảo Mật
+        - **"Cực kỳ nguy hiểm" (Quan điểm của Simon Willison)**
+          - LLM có thể làm bất cứ điều gì con người làm được qua terminal [cite: 6]
+          - Nguy cơ từ tấn công tiêm prompt (prompt injection) là có thật và chưa có giải pháp triệt để [cite: 23, 27]
+          - Người dùng thường sẽ bỏ qua cảnh báo vì "mệt mỏi với hộp thoại" (dialog fatigue) [cite: 148]
+        - **"Phóng đại hoang dã" (Quan điểm phản bác)**
+          - Hàng ngàn giờ sử dụng mà không gặp vấn đề gì [cite: 19, 71]
+          - Nguy hiểm tương tự như việc cấp quyền cho một kỹ sư junior hoặc copy-paste script từ StackOverflow [cite: 42, 74, 80]
+          - Lỗi là do người dùng (skill issue), không phải do công cụ [cite: 69]
+        - **Các giải pháp giảm thiểu rủi ro**
+          - **Sandboxing**: Cách duy nhất đáng tin cậy [cite: 28]
+            - Dùng devcontainer của Anthropic [cite: 128]
+            - Dùng Podman, Bubblewrap [cite: 135, 138]
+          - **Whitelisting (Lọc lệnh)**: Kiểm soát các lệnh mà LLM được phép chạy [cite: 92, 103]
+          - **User Permissions**: Chạy agent với một user Linux riêng bị hạn chế quyền [cite: 122]
+          - **Giám sát & Phê duyệt**: Yêu cầu AI trình bày kế hoạch và phải được người dùng duyệt từng bước [cite: 96]
+        - **Những sự cố thực tế**
+          - Tự ý vá tài nguyên trên cụm Kubernetes production [cite: 38, 40]
+          - Gây treo hệ thống vì sử dụng bộ nhớ không giới hạn [cite: 61]
+          - Xóa toàn bộ thư mục `.config` [cite: 117]
+          - Yêu cầu quyền xóa `~/` [cite: 78]
+
+        ## 🥊 So Sánh & Hệ Sinh Thái Công Cụ
+        - **vs. OpenAI Codex**
+          - Claude Code được cho là có UX tốt hơn, nhiều tính năng hơn [cite: 622, 625]
+          - Codex bị chê là không thể cuộn, không thể chat khi đang chạy [cite: 627, 641]
+          - Tuy nhiên, Codex đã cải thiện rất nhanh gần đây [cite: 632]
+        - **vs. Aider**
+          - Bị chê là "vụng về" và không có workflow agentic như Claude/Codex [cite: 284, 754]
+          - Nhưng vẫn được nhiều người trung thành vì cho phép kiểm soát tốt hơn [cite: 758, 760]
+        - **Các lựa chọn thay thế khác**
+          - **OpenCode**: Mã nguồn mở, hỗ trợ mọi nhà cung cấp LLM, tích hợp LSP [cite: 889]
+          - **Goose**: Được đề cập nhưng ít so sánh sâu [cite: 483, 496]
+          - **Crush**: Được khen vì viết bằng Go, UX tốt, hỗ trợ nhiều provider [cite: 604]
+
+        ## 💡 Trải Nghiệm & Luồng Làm Việc (Workflows)
+        - **Không chỉ để code**
+          - Có thể dùng cho mọi loại tài liệu: báo cáo, bảng tính, nghiên cứu [cite: 173]
+          - Các ví dụ thực tế: master nhạc [cite: 177], phân tích luật chơi D&D [cite: 194], truy vấn yêu cầu sản phẩm [cite: 199], xử lý video [cite: 434]
+        - **Đối mặt với sự phức tạp**
+          - Rất tốt cho boilerplate, CRUD, những việc nhàm chán [cite: 682, 685, 694]
+          - Thường thất bại hoặc "quá khớp" (overfit) khi gặp vấn đề phức tạp, đòi hỏi logic sâu [cite: 672, 676, 508]
+          - Giải pháp: Chia nhỏ vấn đề, hướng dẫn AI từng bước, hoặc tự viết script để AI chạy [cite: 209, 211]
+        - **Tác động tâm lý**
+          - Giúp các lập trình viên "hết thời" hoặc "cháy sạch" tìm lại tình yêu với lập trình [cite: 659, 661]
+          - Biến thời gian chơi game thành thời gian hoàn thành các dự án cá nhân dang dở [cite: 670]
+
+        ## 🔧 Vấn Đề Kỹ Thuật & Hiệu Năng
+        - **Hiệu năng & Tài nguyên**
+          - Bị phàn nàn là ngốn RAM (vài GB) vì viết bằng TS + React + Ink [cite: 602, 603]
+          - Gặp lỗi "Hết bộ nhớ" ngay cả trên máy Mac Pro 128GB RAM [cite: 839, 840]
+          - Các công cụ viết bằng Go (Crush) hoặc Rust (Codex) được cho là hiệu quả hơn [cite: 604, 610]
+        - **Quyền riêng tư dữ liệu**
+          - Anthropic thu thập dữ liệu sử dụng ngay cả khi người dùng trả phí và đã tắt tùy chọn training [cite: 552, 553]
+          - Gây lo ngại về việc mã nguồn riêng tư có thể bị rò rỉ vào các model tương lai [cite: 561, 575]
+
+      </script>
+    </div>
+  </body>
+</html>
