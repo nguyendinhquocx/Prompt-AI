@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - Linux</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Linux
+        ## Tổng quan
+        - Một họ hệ điều hành Unix-like mã nguồn mở
+        - Dựa trên Linux kernel của Linus Torvalds (1991)
+        - Thường được đóng gói thành các **Distribution (distro)**
+        - Ví dụ distro: Debian, Ubuntu, Fedora, Arch Linux
+        - Là ví dụ điển hình của phần mềm tự do và mã nguồn mở
+        - Linh vật: chim cánh cụt Tux
+        ## Lịch sử
+        - **Tiền thân**
+          - Unix (1969, Bell Labs)
+          - Dự án GNU (1983, Richard Stallman)
+            - Mục tiêu: tạo HĐH tương thích Unix hoàn toàn miễn phí
+            - Hoàn thành nhiều thành phần nhưng kernel (Hurd) bị đình trệ
+          - Minix (1987, Andrew Tanenbaum): HĐH cho mục đích giáo dục
+        - **Sự ra đời**
+          - Linus Torvalds, một sinh viên Phần Lan, bắt đầu phát triển kernel năm 1991
+          - Lý do: Thất vọng với giấy phép chỉ dành cho giáo dục của Minix
+          - Nếu GNU kernel hoặc 386BSD có sẵn, Linus có thể đã không tạo ra Linux
+        - **Phát triển**
+          - Tích hợp các thành phần của GNU để tạo ra một HĐH hoàn chỉnh và miễn phí
+          - Chuyển từ giấy phép cấm thương mại sang GNU GPL
+        ## Thiết kế & Kiến trúc
+        - **Triết lý**
+          - Không được "thiết kế" mà "tiến hóa" qua chọn lọc tự nhiên
+          - Phát triển bởi hàng ngàn tình nguyện viên qua Internet
+        - **Kiến trúc**
+          - HĐH Unix-like dạng module
+          - Sử dụng kernel nguyên khối (monolithic kernel)
+          - **Kernel space**: quản lý tiến trình, mạng, truy cập ngoại vi, hệ thống file
+          - **Userland**:
+            - Các thành phần GNU là chủ chốt (trừ Android)
+            - Thư viện C (glibc, musl)
+            - Shell (bash là phổ biến nhất)
+            - Giao diện đồ họa (GUI) xây dựng trên X11 hoặc Wayland
+        - **Các thành phần chính**
+          - Bootloader (GRUB, LILO)
+          - Init program (systemd, sysvinit)
+          - Thư viện phần mềm
+          - Hệ thống quản lý gói (dpkg, RPM, pacman)
+        ## Thị phần & Ứng dụng
+        - **Máy chủ (Servers)**: Thống trị tuyệt đối (>96.4% top 1 triệu web server)
+        - **Siêu máy tính (Supercomputers)**: Sử dụng trên TOÀN BỘ 500 siêu máy tính nhanh nhất thế giới
+        - **Thiết bị di động**:
+          - Nền tảng của Android
+          - Có cơ sở cài đặt lớn nhất trong các HĐH đa dụng (khi tính cả Android)
+        - **Máy tính cá nhân (Desktop)**: Thị phần nhỏ, khoảng 4% (tính đến 03/2024)
+        - **Hệ thống nhúng (Embedded)**: Rất phổ biến
+          - Router, TV thông minh, xe hơi (Tesla, Audi...), tàu vũ trụ (Falcon 9)
+        - **Sản xuất phim**: Là nền tảng được lựa chọn, hơn 95% server và desktop tại các studio lớn dùng Linux
+        ## Giấy phép & Tên gọi
+        - **Giấy phép**
+          - Linux kernel dùng GNU General Public License (GPL) v2
+          - GPL là một dạng copyleft: phần mềm phái sinh cũng phải là copyleft
+          - Cho phép sử dụng, sửa đổi, phân phối thương mại hoặc phi thương mại
+        - **Thương hiệu & Tên gọi**
+          - Tên "Linux" là thương hiệu của Linus Torvalds
+          - Free Software Foundation (FSF) khuyến khích dùng tên **"GNU/Linux"** để nhấn mạnh vai trò của phần mềm GNU, gây ra tranh cãi
+      </script>
+    </div>
+  </body>
+</html>

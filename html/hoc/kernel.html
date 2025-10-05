@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap - Kernel là cái đéo gì?</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 400
+          colorFreezeLevel: 2
+        ---
+        # Kernel là cái con cặc gì?
+        ## Phép ẩn dụ: Máy tính = Nhà hàng sang chảnh
+        - **Thực khách (Diner)**: Chính là **MÀY** (người dùng)
+        - **Ứng dụng (Apps)**: Lũ bồi bàn (Chrome, Zalo, Game...)
+        - **Phần cứng (Hardware)**: Khu vực **NHÀ BẾP**
+            - **CPU**: Đầu bếp chính
+            - **RAM**: Tủ lạnh (chứa nguyên liệu tươi)
+            - **Ổ cứng**: Kho đông lạnh (chứa đồ dự trữ)
+            - **Thiết bị khác**: Lò nướng, bếp ga...
+        - **KERNEL**: **Thằng TỔNG QUẢN kiêm BẾP TRƯỞNG**
+            - Quyền lực tối cao, mọi thứ phải qua tay nó
+            - *Bổ sung: Nó là thằng duy nhất được mặc áo đen trong khi cả nhà hàng mặc áo trắng*
+
+        ## Nhiệm vụ của Tổng Quản KERNEL
+        - ### 1. Nhận lệnh & Điều phối (System Calls)
+            - **Luồng công việc:**
+                1. Bồi bàn (Ứng dụng) nhận yêu cầu từ mày.
+                2. Bồi bàn trình "order" cho Tổng Quản (Kernel). **CẤM TỰ Ý VÀO BẾP!**
+                3. Tổng Quản xem xét, quyết định, và giao việc cho Nhà bếp (Phần cứng).
+                4. Nhà bếp làm xong, báo Tổng Quản.
+                5. Tổng Quản báo Bồi bàn ra bưng món.
+            - **Bản chất**: Cầu nối giao tiếp có trật tự giữa **Phần mềm** và **Phần cứng**.
+
+        - ### 2. Quản lý tài nguyên (Resource Management)
+            - Nhà bếp có giới hạn, phải chia cho hợp lý.
+            - **Quản lý CPU (Chia việc cho đầu bếp)**
+                - Quyết định đầu bếp (nhân CPU) nào làm món nào, món nào ưu tiên.
+                - Bắt các đầu bếp liên tục đổi món đang làm để không khách nào đợi lâu.
+                - Kỹ thuật: **"Context Switching"**.
+            - **Quản lý RAM (Quản lý tủ lạnh)**
+                - Tủ lạnh (RAM) có hạn.
+                - Quyết định nguyên liệu (dữ liệu) nào cần nhất thì để trong tủ lạnh.
+                - Nguyên liệu ít dùng thì tống xuống kho đông lạnh (ổ cứng).
+                - Kỹ thuật: **"Bộ nhớ ảo" (Virtual Memory)**.
+            - **Quản lý thiết bị (Dùng lò nướng, máy in)**
+                - Bồi bàn chỉ cần báo: "Cần một cái pizza".
+                - Tổng Quản sẽ ra lệnh cho "nhân viên chuyên trách" biết dùng lò nướng.
+                - Nhân viên chuyên trách: **"Device Driver"**.
+
+        - ### 3. Bảo vệ & Cách ly (Protection)
+            - **Quy tắc sắt**: Khu vực bếp (**Kernel Space**) là **BẤT KHẢ XÂM PHẠM**.
+            - **Lý do**:
+                - Ngăn một thằng khách say xỉn (ứng dụng lỗi) chạy vào bếp phá hoại.
+                - Nếu nó vào bếp, nó có thể đốt cả nhà hàng (làm sập hệ điều hành).
+            - **Kết quả**:
+                - Khu nhà ăn (**User Space**) và khu bếp (**Kernel Space**) tách biệt.
+                - Một thằng bồi bàn làm đổ bia ngoài salle không ảnh hưởng đến bếp.
+                - *Bổ sung: Đây là lý do tại sao một tab Chrome bị treo không làm sập cả Windows/macOS.*
+
+        ## Tóm lại cho thằng ngu
+        - **Kernel**: Bộ não, trái tim, ông chủ thực sự của hệ điều hành.
+        - **Vai trò**: Thằng phiên dịch và bảo kê giữa phần mềm và phần cứng.
+        - **Ví dụ**: Mày bấm vào icon Chrome -> Chrome cúi đầu xin phép Kernel để được cấp CPU và RAM.
+        - **Sự thật phũ phàng**: Không có Kernel, máy tính chỉ là một đống sắt vụn vô tri.
+      </script>
+    </div>
+  </body>
+</html>

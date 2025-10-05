@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Use DirectQuery trong Power BI Desktop
+        ## Các chế độ kết nối dữ liệu
+        - Import
+          - Nhập bản sao dữ liệu vào Power BI Desktop
+          - Tương tác với dữ liệu đã nhập sẵn
+          - Muốn cập nhật phải import lại hoặc refresh toàn bộ mô hình
+        - DirectQuery
+          - Không nhập dữ liệu, chỉ truy vấn trực tiếp nguồn ngoài
+          - Xem dữ liệu luôn mới, không cần refresh toàn bộ
+          - Hạn chế về hiệu năng và một số tính năng
+        ## Lợi ích khi dùng DirectQuery
+        - Xử lý mô hình dữ liệu rất lớn, không cần nhập hết về máy
+        - Luôn cập nhật dữ liệu mới nhất khi xem báo cáo
+        - Không bị giới hạn 1GB mô hình như Import
+        ## Cách kết nối DirectQuery
+        - Vào Home → Get Data → Chọn nguồn hỗ trợ DirectQuery (ví dụ: SQL Server)
+        - Chọn chế độ DirectQuery trong hộp thoại kết nối
+        - Lưu ý: Không phải nguồn nào cũng hỗ trợ DirectQuery
+        ## Đăng báo cáo lên Power BI Service
+        - Được phép publish báo cáo DirectQuery lên Service
+        - Nguồn không phải Azure SQL, Azure Synapse, Redshift, Snowflake cần cài Gateway on-premises và đăng ký nguồn dữ liệu
+        - Nguồn cloud chỉ cần cấp credentials truy cập, không cần Gateway
+        - Không khai báo credentials: mở báo cáo sẽ lỗi
+        - Cách khai báo credentials:
+          - Vào workspace → tìm semantic model → More options → Settings → Data source credentials
+        - Lưu ý đặc biệt: Azure SQL Database IP private vẫn phải dùng Gateway
+        ## Lưu ý & Giới hạn DirectQuery
+        - Không hỗ trợ toàn bộ tính năng Power BI Desktop
+        - Một số tính năng Power BI Service cũng hạn chế (ví dụ: quick insights)
+        - Hiệu năng phụ thuộc vào tốc độ trả dữ liệu của nguồn
+        - Đáp ứng tốt nhất: dưới 5 giây, >30s là chán, >4 phút bị timeout
+        - Số lượng người dùng càng đông, đặc biệt có RLS, thì tải lên nguồn càng lớn
+        - Dashboard không RLS: 1 query, có RLS: mỗi user 1 query
+        - Giới hạn 1 triệu dòng với nguồn cloud, nguồn on-prem bị giới hạn kích thước payload
+        - Premium capacity có thể tăng limit
+        - Truy vấn với cột nhiều giá trị (high cardinality) dễ vượt limit, phải filter hoặc tính toán hợp lý
+        - Lỗi: "The resultset of a query to external data source has exceeded the maximum allowed size of '1000000' rows."
+        - Security:
+          - Mặc định: ai xem báo cáo cũng dùng credentials đã khai báo (giống Import)
+          - Muốn phân quyền từng user: dùng RLS hoặc Kerberos SSO (nếu nguồn hỗ trợ)
+        - Các giới hạn khác:
+          - Power Query Editor quá phức tạp sẽ lỗi, phải chỉnh lại hoặc chuyển Import
+          - Không có auto date/time hierarchy, không drilldown theo năm/tháng/ngày
+          - Table/matrix >500 dòng chỉ hiển thị tối đa 125 cột
+          - Không chuyển từ Import sang DirectQuery, chỉ chuyển một chiều DirectQuery → Import
+          - Calculated tables/columns hỗ trợ SSO nếu dùng shareable cloud connection hoặc granular access control
+        ## Liên kết & tài liệu tham khảo
+        - [DirectQuery in Power BI](https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-directquery-about)
+        - [Danh sách nguồn dữ liệu hỗ trợ DirectQuery](https://learn.microsoft.com/en-us/power-bi/connect-data/power-bi-data-sources)
+        - [DirectQuery & SAP BW](https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-directquery-sap-bw)
+        - [DirectQuery & SAP HANA](https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-directquery-sap-hana)
+        - [On-premises data gateway](https://learn.microsoft.com/en-us/power-bi/connect-data/service-gateway-onprem)
+        - [Composite Models Power BI](https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-composite-models)
+      </script>
+    </div>
+  </body>
+</html>
