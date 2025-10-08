@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Dataform BigQuery – Chất chơi tổ chức dữ liệu
+        ## Làm gì?
+        - DevOps cho mảng chuyển đổi dữ liệu (ELT/ETL) trong BigQuery
+        - Quản lý, test, version code SQL/JS để biến raw data thành clean data
+        - Tự động hóa, kiểm soát, rollback, audit, document, dependency tree
+        ## Hình dung sự khác biệt
+        - Ngày xưa:  
+          - Tự viết SQL, tự chạy, copy-paste, lỗi tự chịu  
+          - Không kiểm soát được thay đổi, pipeline loạn như hạch
+        - Dùng Dataform:  
+          - Repository chứa toàn bộ code, version control như code app
+          - Workspace dev riêng, không phá nhau
+          - Compile thành SQL chuẩn chạy đúng thứ tự dependency
+          - Test chất lượng dữ liệu, assert các kiểu
+          - Document từng bảng/cột ngay trong code
+          - Schedule pipeline, tích hợp CI/CD, rollback, debug dễ
+        ## Tính năng chính
+        - Quản lý code dữ liệu tập trung
+        - Version control, rollback, audit lịch sử
+        - Quản lý dependency giữa các bảng
+        - Tích hợp test, document, schedule, CI/CD
+        - Đẩy document ra BigQuery luôn, không cần thêm tay
+        ## Use case thực tế
+        - Team BI, data warehouse, data lake, pipeline phức tạp
+        - Cần kiểm soát chất lượng, rollback, audit, automation
+        - Vũ khí tối thượng cho data engineer, analytics, BI chuyên nghiệp
+        - Không phù hợp cho ai thích query lẻ, sửa trực tiếp, thích tự do “mò”
+        ## So sánh & định vị
+        - Không khác gì DBT nhưng native cho BigQuery
+        - Dùng Dataform là sống chuẩn chỉnh, pipeline như phần mềm thực thụ
+        ## Kết luận
+        - Dataform = DevOps + CI/CD + test + doc + version cho pipeline BigQuery
+        - Không chơi nửa vời: hoặc master data pipeline, hoặc mãi quẩy query lẻ
+        - Muốn hiểu sâu: setup, best practice, migration, so sánh DBT – hỏi tiếp!
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Lý Thuyết Trò Chơi: Nguồn Gốc Của Sự Hợp Tác
+
+        ## I. Song Đề Tù Nhân (The Prisoner's Dilemma)
+        - **Bối cảnh**: Hai người chơi, hai lựa chọn: Hợp tác (Cooperate) hoặc Phản bội (Defect)
+        - **Ma trận trả thưởng (Payoff Matrix)**
+          - Cả hai hợp tác: Cùng nhận 3 đồng
+          - Mày hợp tác, nó phản bội: Mày 0, nó 5
+          - Mày phản bội, nó hợp tác: Mày 5, nó 0
+          - Cả hai phản bội: Cùng nhận 1 đồng
+        - **Nghịch lý cốt lõi**:
+          - Lựa chọn hợp lý nhất cho mỗi cá nhân (luôn phản bội) dẫn đến kết quả tồi tệ cho cả hai
+          - **Ví dụ kinh điển**: Chạy đua vũ trang Mỹ - Liên Xô. Tốn 10 nghìn tỷ đô la cho vũ khí hạt nhân mà không ai dám dùng
+
+        ## II. Giải Đấu Của Axelrod (The Axelrod's Tournaments)
+        - **Vấn đề mới**: Chuyện gì xảy ra nếu chơi lặp đi lặp lại (Iterated Prisoner's Dilemma)?
+        - **Thí nghiệm**: Robert Axelrod tổ chức giải đấu trên máy tính
+          - 14 chiến lược từ các chuyên gia + 1 chiến lược ngẫu nhiên (Random)
+          - Mỗi chiến lược đấu với nhau 200 vòng
+        - **Kẻ chiến thắng bất ngờ**: **Tit for Tat** - chiến lược đơn giản nhất
+
+        ## III. Tit for Tat: Công Thức Chiến Thắng
+        - **Luật chơi cực đơn giản**:
+          1. **Nước đi đầu tiên**: Luôn Hợp tác
+          2. **Các nước đi sau**: Sao chép y hệt hành động của đối thủ ở vòng trước
+        - **Cách nó hoạt động**:
+          - Gặp người tốt (Friedman): Cả hai cùng hợp tác đến cuối, điểm tối đa
+          - Gặp kẻ xấu (Joss): Bị phản bội, nó trả đũa ngay, nhưng sẵn sàng hợp tác lại nếu đối thủ quay đầu
+
+        ## IV. Bốn Đặc Tính Vàng Của Sự Thành Công
+        - Axelrod phân tích và tìm ra 4 phẩm chất chung của các chiến lược hàng đầu:
+        - **1. Tốt Bụng (Nice)**: Không bao giờ là người phản bội trước
+          - Top 8 chiến lược đều là "nice"
+        - **2. Tha Thứ (Forgiving)**: Không thù dai. Bị phản bội, trả đũa, nhưng sẵn sàng hợp tác lại ngay nếu đối thủ tỏ thiện chí
+          - Trái ngược với Friedman: Bị phản bội một lần, sẽ phản bội đến hết game
+        - **3. Biết Trừng Phạt (Retaliatory / Provokable)**: Không phải kẻ nhu nhược. Bị tấn công là phải trả đũa ngay lập tức
+          - Một chiến lược "luôn hợp tác" sẽ bị lợi dụng đến chết
+        - **4. Rõ Ràng (Clear)**: Dễ đoán, không mập mờ. Đối thủ có thể hiểu và xây dựng lòng tin
+          - Các chiến lược quá phức tạp khiến đối thủ không thể hợp tác vì không đoán được ý đồ
+
+        ## V. Những Lớp Nghĩa Sâu Hơn
+        - **Không có chiến lược "tốt nhất" duy nhất**:
+          - Sự thành công của một chiến lược phụ thuộc vào môi trường (tức là các chiến lược khác)
+          - Tit for Tat sẽ thảm bại trong một thế giới toàn kẻ bắt nạt (luôn phản bội)
+        - **Sự tiến hóa của hợp tác**:
+          - Trong mô phỏng sinh thái, các chiến lược thành công sẽ nhân lên, kẻ thất bại sẽ tuyệt chủng
+          - Một "hòn đảo" nhỏ của những người chơi Tit for Tat có thể xâm chiếm và thống trị một thế giới toàn kẻ xấu
+        - **Vấn đề của "Nhiễu" (Noise)**:
+          - Trong thực tế, có thể xảy ra hiểu lầm (một hành động hợp tác bị coi là phản bội)
+          - Nhiễu có thể đẩy hai người chơi Tit for Tat vào vòng xoáy trả thù vô tận
+          - **Giải pháp**: Generous Tit for Tat (Tha thứ có điều kiện) - bỏ qua khoảng 10% các lần phản bội của đối thủ để phá vỡ vòng lặp
+        - **Trò Chơi Phi Tổng Bằng Không (Non-Zero-Sum)**:
+          - Cuộc sống không phải lúc nào cũng là zero-sum (kẻ thắng lấy của người thua) như cờ vua
+          - Mục tiêu không phải là "đánh bại" đối thủ, mà là cùng nhau "khai thác" phần thưởng từ "ngân hàng" (thế giới)
+          - Tit for Tat không bao giờ "thắng" một ván đấu nào (chỉ hòa hoặc thua), nhưng lại có tổng điểm cao nhất
+
+        ## VI. Bài Học & Ứng Dụng
+        - **Sinh học**: Giải thích sự hợp tác ở động vật, như linh dương Impala chải chuốt cho nhau
+        - **Chính trị**: Giải trừ vũ khí hạt nhân từng bước một, có kiểm tra chéo, thay vì một thỏa thuận duy nhất
+        - **Triết lý sống**: Trong dài hạn, người chơi định hình môi trường. Lựa chọn của mày không chỉ ảnh hưởng đến mày, mà còn góp phần tạo ra thế giới mày đang sống
+
+      </script>
+    </div>
+  </body>
+</html>

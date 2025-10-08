@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Cách tối ưu nhận donate cho extension - từ “dân chơi làng” tới Supreme Architect
+        ## 1. Nền tảng phân phối – đặt ở đâu?
+        - Chrome Web Store, Firefox Add-ons, Edge Add-ons: up extension lên cho dễ tiếp cận user
+        - GitHub: để source code, hướng dẫn, changelog, kêu gọi donate trong README
+        - Website riêng: tự làm thương hiệu, SEO, quản lý donate chủ động
+        - Chốt: Up trên store + nhồi donate vào UI extension + README + mọi touchpoint
+        ## 2. Cơ chế donate – dùng gì cho ngon?
+        - Buy Me A Coffee, Ko-fi, Patreon: đơn giản, link nhanh, phổ biến quốc tế
+        - Paypal.me: nhận tiền quốc tế, phổ biến nhưng đôi khi khó ở VN
+        - Momo, VietQR, ZaloPay: target user Việt, tạo QR, nhét popup/README
+        - Chốt: Đa dạng kênh, tối giản bước, ít nhất 1 quốc tế + 1 Việt Nam
+        ## 3. Cách nhồi donate vào extension (UI/UX)
+        - Popup/main UI: nút “Ủng hộ”, “Donate” dễ thấy, không gây khó chịu
+        - Settings/About tab: section “Ủng hộ tác giả”, giải thích ngắn lý do, lợi ích
+        - Notification/Changelog: update thì nhắc donate nhẹ nhàng
+        - Github/Website/Store desc: link donate rõ, CTA mạnh, không nói kiểu “nếu thích thì donate”
+        ## 4. Tâm lý học donate – điều dân ngáo không thấy
+        - Không ai tự donate nếu không “chạm”: phải giải quyết nỗi đau, tác giả update, có cộng đồng, roadmap rõ
+        - Càng cá nhân hóa càng dễ donate: kể chuyện, lý do, đam mê, khó khăn, mục tiêu phát triển
+        - Đừng ép, đừng spam, không khóa tính năng nếu chưa donate (trừ freemium)
+        - Khoe nhẹ khi có donate: cảm ơn public, tạo hiệu ứng herd
+        ## 5. Cách tăng xác suất nhận donate
+        - Update thường xuyên, log rõ ràng, trả lời user nhanh
+        - Có tính năng “gợi ý/request feature”, ưu tiên người donate
+        - Tạo event milestone nhỏ, vinh danh người donate
+        - Social proof: feedback từ user đã donate/cảm ơn
+        ## 6. Bản chất cuối cùng
+        - “Free + donate” chỉ hiệu quả nếu giải quyết nỗi đau lớn, cộng đồng biết ơn, tác giả biết kể chuyện
+        - Đa phần extension nhỏ xác suất donate rất thấp, đừng ảo tưởng
+        - Muốn bền vững: nghiên cứu freemium, bán API, quảng cáo/affiliate
+        - Nếu đúng chất “cho đi”, làm tốt thì vẫn có cơ hội được cộng đồng ủng hộ
+        ## Tóm tắt hành động
+        - Đăng extension lên store, GitHub, website nếu có
+        - Tạo link donate đa kênh (Buy Me A Coffee, Ko-fi, Momo, PayPal,...)
+        - Đặt nút donate ở UI, README, changelog, about tab, không làm phiền user
+        - Kể chuyện cá nhân, update thường xuyên, feedback nhanh, tạo cảm giác “người thật”
+        - Đừng kỳ vọng giàu, nhưng làm tốt vẫn có cơ hội nhận ủng hộ
+      </script>
+    </div>
+  </body>
+</html>

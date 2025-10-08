@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # Quy trình gộp file Excel rác thành file tổng xịn
+        ## 1. Chuẩn bị nguồn rác
+        - Gom hết file cùng cấu trúc vào một folder riêng
+        - Đặt tên nhất quán (năm/tháng/file)
+        - Kiểm tra sơ bộ format: tên sheet, số cột, kiểu dữ liệu
+        ## 2. Tạo Power Query kết nối folder
+        - Data → Get Data → From Folder
+        - Combine & Transform Data → chọn sheet đúng
+        - Power Query tự động import/gộp data
+        ## 3. Xử lý rác trong Power Query
+        - Kiểm tra cột, kiểu dữ liệu
+        - Thêm cột nguồn (Source.Name, tháng/năm)
+        - Loại bỏ dòng trống, duplicate, dòng lỗi
+        - Chuẩn hóa giá trị, format ngày/tháng, số, text
+        - Rule kiểm tra dữ liệu thiếu/lỗi
+        ## 4. Đặt lại tên cột
+        - Sau khi combine file, trước khi transform
+        - Đổi tên cột cho đồng nhất, chuẩn, dễ trace
+        - Đặt tên chuẩn xong mới transform, lọc, tính toán
+        ## 5. Tạo file tổng master data
+        - Close & Load ra sheet/file mới
+        - Không sửa trực tiếp, luôn qua Power Query
+        - Làm nguồn cho Power BI, Google Sheets, BigQuery, SQL
+        ## 6. Phân tích, tái sử dụng, copy nguồn khác
+        - Pivot Table, dashboard, export/sync sang nguồn khác
+        - Có trường nguồn, tháng/năm, trace dễ dàng
+        - Automation: chỉ cần refresh, không gộp tay lại
+        ## 7. Tái xử lý, backup, update
+        - Sửa file gốc, refresh lại query là xong
+        - Backup file tổng định kỳ, version theo tháng/năm
+        - Giữ folder nguồn, file tổng tách biệt
+        ## 8. Template, hàm xử lý cho tái sử dụng
+        - Biến bước làm sạch thành hàm trong Power Query
+        - Lưu template truy vấn/hàm cho dự án khác
+        - Truy vấn động, không hardcode đường dẫn
+        ## 9. Mở rộng nâng cao
+        - Kiểm tra schema tự động nếu cấu trúc thay đổi
+        - Tích hợp Power Automate, Data Factory cho automation
+        - Lưu log làm sạch, cảnh báo lỗi cho lần sau
+        ## 10. Kinh nghiệm thực chiến
+        - Luôn xử lý lỗi, loại trừ file bẩn/lạ đầu vào
+        - Đặt tên truy vấn, hàm rõ ràng, dễ bảo trì
+        - Chia nhỏ bước biến đổi, tái sử dụng linh hoạt
+      </script>
+    </div>
+  </body>
+</html>
