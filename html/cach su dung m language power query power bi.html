@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # markmap
+        ## Bộ soạn thảo Nâng cao Power Query
+        - Cổng vào thế giới M Language
+        - Chỉnh trực tiếp code, không bị giới hạn GUI
+        ## Bản chất thật sự
+        - Ảnh ![image2](image2): Nút mở Bộ soạn thảo Nâng cao
+        - Ảnh ![image1](image1): Danh sách các bước biến đổi tự sinh
+        - Ảnh ![image3](image3): Giao diện code hóa logic xử lý
+        - Code M: Từng bước biến đổi gọi bằng biến
+        ## Sức mạnh cho dân chuyên
+        - Kiểm soát tuyệt đối (logic, tham số, xử lý lỗi, hàm custom)
+        - Tái sử dụng, tối ưu hóa (hàm dùng lại, sửa một chỗ, ăn ở mọi nơi)
+        - Hiệu năng: Query folding, đẩy xử lý về nguồn
+        - Automation: Tự động hóa thao tác lặp lại
+        - Xử lý kịch bản phức tạp (merge, split, pivot, API, dataflow)
+        ## Cách dùng cơ bản
+        - Mở Bộ soạn thảo Nâng cao (bấm nút ![image2](image2))
+        - Xem logic toàn bộ truy vấn qua code (![image3](image3))
+        - Chỉnh, thêm, xoá, viết lại logic, lồng ghép IF, TRY, LIST, TABLE
+        - Debug, kiểm thử nhanh, không mò từng bước
+        ## Kịch bản ứng dụng bá đạo
+        - Xử lý file hàng loạt (quét folder, lọc file, gộp)
+        - Đọc API động (truy vấn động, phân tích JSON)
+        - Làm sạch dữ liệu siêu bẩn (regex, mapping)
+        - Tối ưu hóa refresh (kiểm soát query folding)
+        ## Lưu ý khi chơi hàng nâng cao
+        - Hiểu M Language, không chơi GUI mãi
+        - Đọc code, viết hàm, hiểu kiểu dữ liệu (list, table, record)
+        - Nếu ngu, chịu khó search, học từng dòng
+        ## Đặt tên từng bước cho tái sử dụng
+        - Không đặt kiểu “Bước1”, “Bước2”
+        - Đặt tên rõ chức năng: Đã lọc Hàng, Đã xóa Cột rác, v.v.
+        - Sửa, debug, tái sử dụng dễ dàng
+        ## Bước sau dùng lại tên bước trước
+        - Cấu trúc let: Biến sau dùng biến trước
+        - Dễ lồng ghép, sửa logic, copy tái sử dụng
+        ## “in” là tên bước cuối cùng
+        - in = kết quả cuối cùng của truy vấn
+        - Muốn debug, trả kết quả ở giữa, đổi in thành tên bước đó
+        ## Phương pháp GUI nhưng tối ưu bằng code
+        - Bấm GUI cho nhanh, vào code sửa lại tên bước, logic
+        - Copy toàn bộ sang truy vấn mới, sửa nguồn là chạy
+        - Viết hàm cho logic lặp lại
+        ## Chiến lược cho dân chơi Power Query
+        - Đặt tên bước rõ ràng, không viết tắt ngu
+        - Tách nhỏ từng xử lý
+        - Viết hàm custom cho logic lặp
+        - Dùng biến trung gian cho truy vấn phức tạp
+        - Comment code nếu cần
+        - Copy code sang truy vấn khác, tái sử dụng nhanh
+        - Kiểm tra query folding tối ưu hiệu năng
+        ## Quy trình chuẩn hóa tái sử dụng Power Query
+        - Bấm GUI sinh bước cơ bản
+        - Vào Bộ soạn thảo Nâng cao sửa tên bước, tối ưu logic
+        - Tách các xử lý độc lập thành hàm dùng lại
+        - Comment, chú thích rõ ràng
+        - Lưu thành template, copy sang truy vấn mới
+        ## Ví dụ chuẩn hóa đoạn mã Power Query
+        - Kết nối nguồn BigQuery
+        - Truy xuất database, schema, bảng
+        - Lọc hàng theo điều kiện
+        - Chọn cột cần thiết
+        - Đổi kiểu dữ liệu
+        - Sắp xếp theo giá gốc
+        - Đặt tên rõ ràng từng bước
+        ## Viết hàm để tái sử dụng
+        - Hàm nhận bảng đầu vào, trả bảng đã xử lý
+        - Dễ bảo trì, mở rộng, dùng lại mọi lúc
+        ## Chốt lại
+        - Đặt tên rõ ràng, chia nhỏ từng bước
+        - Viết hàm cho tái sử dụng
+        - Đừng để code như bãi rác, sau này nhìn lại không muốn đập mặt vào tường
+      </script>
+    </div>
+  </body>
+</html>

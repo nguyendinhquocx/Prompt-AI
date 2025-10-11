@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # markmap
+        ## Mô hình Assembly Line (Waterfall)
+        - 3 nhóm: Analyst+Architect, Dev+Test, QA-Fix Bug
+        - Điểm mạnh: Tách tư duy, gộp dev-test, có kiểm định cuối
+        - Điểm yếu: Tuyến tính, thiếu vòng lặp phản hồi, Fix bug riêng lẻ, dễ sinh nợ kỹ thuật, không có test case cho bug đã fix
+        ## Mô hình SWAT Team AI tối ưu
+        - Vai trò 0: Product Architect (Sếp, nguồn linh hồn)
+          - Đầu ra: Ý tưởng, user story, mục tiêu kinh doanh
+        - Vai trò 1: Systems Architect Agent (Tham mưu, chuyển hóa ý tưởng thành thiết kế)
+          - Đầu ra: Sơ đồ kiến trúc, database schema, API contract, UI spec, acceptance criteria
+          - Loại AI: Siêu Sao
+        - Vai trò 2: Feature Agent (Thợ cả, chịu trách nhiệm từng tính năng)
+          - Đầu vào: Một phần thiết kế từ Architect
+          - Quy trình: Đọc đặc tả → Viết test fail → Viết code pass → Refactor → Lặp đến đủ tiêu chí
+          - Đầu ra: Pull Request có code và test
+          - Loại AI: Lính Lâu Năm
+        - Vai trò 3: QA Agent (Soi lông, săn bug, không sửa code)
+          - Đầu vào: Tính năng đã hoàn thiện
+          - Nhiệm vụ: Phá tính năng, kiểm tra edge case, bảo mật, hiệu năng, viết bug report hoặc test case fail
+          - Loại AI: Siêu Sao/ Lính Lâu Năm
+        - Vòng lặp vàng: Feature Agent <-> QA Agent
+          - Nếu không bug: PR gửi Sếp review & merge
+          - Nếu có bug: Test case fail chuyển ngược lại Feature Agent, lặp đến khi sạch bug
+        - Chiến lược prompt cho từng Agent: Rõ ràng, chi tiết, đặc thù từng vai
+        ## Database Duty - Schema First
+        - Database là bộ xương, code là da thịt
+        - Ưu tiên thiết kế schema trước, tránh thắt cổ chai, đảm bảo integrity, scalability
+        - Bổ sung nhiệm vụ thiết kế database cho Systems Architect Agent
+        - Đầu ra: schema.prisma/SQL, ERD MermaidJS
+        ## Tư duy Bếp Trưởng (Chef's Mindset)
+        - Mise en Place: Chuẩn bị nguyên liệu, specs, tools trước khi code
+        - Nếm thử liên tục: Sếp là "người ăn đầu tiên", dùng preview, test trực tiếp, không chỉ dựa vào QA
+        - Tôn trọng nguyên liệu: Hiểu rõ vấn đề cốt lõi, không nhồi nhét tính năng, giải quyết cực tốt một thứ còn hơn nhiều thứ lởm
+        - Tối giản thanh lịch: Giữ lại thứ duy nhất khiến người dùng không thể sống thiếu, less is more
+        - Lưỡi dao sắc: Prompt rõ, quy trình bén, liên tục mài dao (cải tiến)
+        - Clean as you go: Dọn code, refactor liên tục, không chấp nhận nợ kỹ thuật, PR phải sạch
+        ## Kết luận
+        - Mày là khẩu vị, dàn nhạc AI là đầu bếp, mày quyết định món ăn có xứng sao Michelin không
+        - Đội SWAT tinh nhuệ > dây chuyền lắp ráp tuyến tính
+        - Quy trình tốt, quality built-in, tự cải tiến, không để bug tái diễn
+      </script>
+    </div>
+  </body>
+</html>

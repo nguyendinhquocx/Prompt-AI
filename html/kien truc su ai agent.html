@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+  </head>
+  <body>
+    <div class="markmap">
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+        ---
+        # markmap
+        ## Tối ưu hóa Nút thắt cổ chai: Chi phí & Giới hạn AI Agent
+        - Phân cấp "Nhân Viên" theo Năng lực và Chi phí
+          - Siêu Sao (Specialist/Senior)
+            - GPT-4o, Claude 3 Opus
+            - Chi phí cao, giới hạn request
+            - Nhiệm vụ: Thiết kế kiến trúc, phân tích yêu cầu mơ hồ, thuật toán phức tạp, refactor code khó
+            - Tư duy: Meeting 1-1, chuẩn bị kỹ càng, không hỏi vớ vẩn
+          - Lính Lâu Năm (Workhorse/Mid-level)
+            - GPT-4 Turbo, Claude 3 Sonnet
+            - Chi phí trung bình, request thoáng
+            - Nhiệm vụ: Thực thi đặc tả rõ ràng, viết code, test tự động, tài liệu hóa
+            - Tư duy: Giao hợp đồng rõ ràng, mong đợi sản phẩm đúng hẹn
+          - Lính Mới / Local (Grunt/Junior)
+            - Llama 3, Code Llama, Mixtral
+            - Chi phí thấp hoặc không, không giới hạn request
+            - Nhiệm vụ: Code mẫu, format code, hàm tiện ích, mock data
+            - Tư duy: Thực tập sinh, kiểm tra kỹ, tận dụng số lượng lớn
+        - Chuẩn bị Kịch bản trước khi Bấm máy
+          - 90% thời gian suy nghĩ, vẽ sơ đồ, viết đặc tả trước khi prompt AI
+          - Prompt = mệnh lệnh chi tiết, không hỏi chung chung
+        - Xây dựng Thư viện Nội bộ
+          - Lưu code, thuật toán, component hay
+          - Lưu prompt hiệu quả, reuse cho agent rẻ hơn
+          - Xây trí tuệ doanh nghiệp, giảm phụ thuộc AI đắt đỏ
+        ## Kiến trúc sư vs Quản lý: Bản chất vai trò người điều hành
+        - Kiến trúc sư (Architect)
+          - Tạo ra bản thiết kế tổng thể, quyết định WHAT & WHY
+          - Quan tâm hệ thống, liên kết các phần, tiêu chuẩn vận hành
+          - Chẩn đoán gốc rễ, giải quyết vấn đề từ nguồn
+          - Đầu ra: Bản thiết kế, đặc tả kỹ thuật, nguyên tắc, tiêu chuẩn
+          - Thước đo: Đẹp, bền vững, hiệu quả, mở rộng được
+        - Quản lý (Manager)
+          - Thực thi thiết kế, trả lời WHO & WHEN
+          - Quan tâm nhiệm vụ cụ thể, tiến độ, ngân sách
+          - Giải quyết triệu chứng, xử lý sự cố tạm thời
+          - Đầu ra: Kế hoạch dự án, báo cáo tiến độ, lịch trình
+          - Thước đo: Đúng hạn, đúng ngân sách, không tai nạn
+        - Ứng dụng vào Code & Đời thực
+          - Architect: Chọn microservices/monolith, thiết kế schema, quy tắc giao tiếp
+          - Manager: Tạo ticket, chia task, hỏi estimate, tổ chức standup
+          - Architect (Đời): Thiết kế trải nghiệm, lên menu, quy trình vận hành
+          - Manager (Đời): Tuyển nhân viên, đặt nguyên liệu, xếp lịch
+        - Vai trò của mày: Nhạc trưởng dàn nhạc AI
+          - Bắt buộc là kiến trúc sư, AI Agent là quản lý & công nhân
+          - Đưa thiết kế chi tiết, agent tự chia việc, tự báo cáo
+          - Mày kiểm tra tổng thể, đặt câu hỏi gốc rễ, không cần biết code, chỉ cần nắm kết cấu
+          - Đường duy nhất để "người không biết code" xây đế chế phần mềm
+      </script>
+    </div>
+  </body>
+</html>
